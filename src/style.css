@@ -1,0 +1,10 @@
+*{
+  border: 0;
+  margin: 0;
+  font-family: Carlito,sans-serif;
+}
+
+.dark-mode{
+  background-color: #121212;
+  color: whitesmoke;
+}
