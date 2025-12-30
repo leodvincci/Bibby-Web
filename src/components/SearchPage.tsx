@@ -1,8 +1,8 @@
 function SearchPage(){
     return(
-        <>
-            <h1>Search Page</h1>
-        </>
+        <section className="search-page">
+            <p className="page-title">Book Search</p>
+        </section>
         )
 }
 
