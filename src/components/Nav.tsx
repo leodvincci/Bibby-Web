@@ -3,7 +3,7 @@
 function Nav(){
     return(
         <nav>
-            <h1>Hello Nav</h1>
+            <p>Bibby</p>
         </nav>
     )
 }
