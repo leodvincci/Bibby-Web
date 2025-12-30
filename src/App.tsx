@@ -6,7 +6,9 @@ if (!container) throw new Error('Root element with id `app` not found')
 
 createRoot(container).render(
     <div>
-        <Nav/>
+        <header>
+            <Nav/>
+        </header>
     </div>
 )
 
