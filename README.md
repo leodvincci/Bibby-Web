@@ -1,4 +1,7 @@
 # Bibby-Web
+<img width="940" height="634" alt="image" src="https://github.com/user-attachments/assets/804035a7-821d-4b42-aae4-f8405eefdd1b" />
+
+<img width="1056" height="706" alt="image" src="https://github.com/user-attachments/assets/465b3858-3e92-4d0c-8977-9d5476e90fbc" />
 
 Figma Mocks:
 <img  alt="image" src="https://github.com/user-attachments/assets/d7d0efa8-2256-4f1c-98b4-61145a6270d2" />
