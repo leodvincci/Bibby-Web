@@ -121,3 +121,28 @@ nav{
 a:visited{
   color: inherit;
 }
+
+#search-input{
+  color: rgba(0, 41, 107, 0.78);
+  font-size: 18px;
+  padding: 0 80px;
+  background-color: #fffafa;
+  margin-top: 25px;
+  width: 1000px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid rgba(78, 78, 78, 0.09);
+  box-shadow: rgba(0, 0, 0, 0.06) 1px 1px 5px 1px;
+}
+
+
+
+#search-input::placeholder{
+  padding: 0 10px;
+  font-size: 16px;
+  color: rgba(73, 73, 73, 0.37);
+}
+
+#search-input:focus{
+  outline-color: rgba(0, 41, 107, 0.16);
+}
