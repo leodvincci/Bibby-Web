@@ -8,6 +8,7 @@ function Nav(){
             <nav>
             <Link to={"/"}> <img className={"bibby-mark"} src={bibbyMark} alt={"bibby-mark"}/> </Link>
             <Link to="/" id={"bibby-logo"}>ibby</Link>
+            <Link to={"/"}><p className={"tag-name"}><span style={{fontWeight:"500",color:"#00296B"}}>Personal</span> Library Manager</p> </Link>
             <ul id={"nav-items"}>
                 <Link to="/search"> Search </Link>
                 <li>Library Management</li>
