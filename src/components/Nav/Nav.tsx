@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import {SearchPage} from "./SearchPage.tsx";
-import bibbyMark from "./bibbyMark.png"
+import {SearchPage} from "../Search/SearchPage.tsx";
+import bibbyMark from "../../../public/bibbyMark.png"
 
 function Nav(){
     return(
