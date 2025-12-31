@@ -15,19 +15,19 @@ function SearchContainer(){
                 <div className={"search-by-radio-options"}>
 
                     <section className={"search-option-radio"}>
-                        <input defaultChecked={true} id="isbn-radio" type={"radio"} name={"search-by"}/>
+                        <input defaultChecked={true} id="isbn-radio" type={"radio"} name={"search-by"} value="isbn"/>
                         <label className={"search-by-label"} htmlFor={"isbn-radio"}>Search by ISBN</label>
                     </section>
 
 
                     <section className={"search-option-radio"}>
-                        <input id={"title-radio"} type={"radio"} name={"search-by"}/>
+                        <input id={"title-radio"} type={"radio"} name={"search-by"} value="title"/>
                         <label className={"search-by-label"} htmlFor={"title-radio"}>Search by Title</label>
                     </section>
 
 
                     <section className={"search-option-radio"}>
-                        <input id={"author-radio"} type={"radio"} name={"search-by"} />
+                        <input id={"author-radio"} type={"radio"} name={"search-by"} value="author" />
                         <label className={"search-by-label"} htmlFor={"author-radio"}>Search by Author</label>
                     </section>
 
