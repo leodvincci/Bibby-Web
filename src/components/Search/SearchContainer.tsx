@@ -1,9 +1,19 @@
+
 function SearchContainer(){
+
+
+
+
+    function userSearchSelection(formData:any){
+        const userSearchSelection = formData.get("search-by")
+        console.log(userSearchSelection)
+    }
+
     return(
         <div className={"search-container"}>
 
 
-            <form className={'search-form'} action={()=>{console.log("Submitted Form")}}>
+            <form className={'search-form'} action={userSearchSelection}>
 
                 <div>
                     <label htmlFor={"search-input"}  aria-label={"book search input"}></label>
