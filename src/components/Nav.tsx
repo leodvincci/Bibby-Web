@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import {SearchPage} from "./SearchPage.tsx";
+import bibbyMark from "./bibbyMark.png"
 
 function Nav(){
     return(
         <BrowserRouter>
-
-        <nav>
-            <Link to="/" id={"bibby-logo"}>Bibby</Link>
+            <nav>
+            <Link to={"/"}> <img className={"bibby-mark"} src={bibbyMark} alt={"bibby-mark"}/> </Link>
+            <Link to="/" id={"bibby-logo"}>ibby</Link>
             <ul id={"nav-items"}>
                 <Link to="/search"> Search </Link>
                 <li>Library Management</li>
