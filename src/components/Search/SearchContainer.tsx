@@ -25,7 +25,7 @@ function SearchContainer(){
                 <div className={"search-by-radio-options"}>
 
                     <section className={"search-option-radio"}>
-                        <input defaultChecked={true} id="isbn-radio" type={"radio"} name={"search-by"} value="isbn"/>
+                        <input  defaultChecked={true} id="isbn-radio" type={"radio"} name={"search-by"} value="isbn"/>
                         <label className={"search-by-label"} htmlFor={"isbn-radio"}>Search by ISBN</label>
                     </section>
 

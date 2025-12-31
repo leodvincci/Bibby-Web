@@ -200,8 +200,20 @@ a:visited{
 
 
 .search-option-radio{
+  accent-color: #3493d3;
   text-align: center;
   padding: 10px 25px;
   border-radius: 10px;
   background-color: rgba(200, 200, 200, 0.08);
+}
+
+
+.results-title{
+  /*border: 2px dotted crimson;*/
+  width: 90%;
+  margin-top: 50px;
+  font-weight: 500;
+  color: rgb(1, 24, 64);
+  font-size: 18px;
+
 }
