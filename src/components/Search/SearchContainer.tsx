@@ -3,7 +3,6 @@ function SearchContainer(){
 
 
 
-
     function userSearchSelection(formData:any){
         const userSearchSelection = formData.get("search-by")
         console.log(userSearchSelection)
@@ -44,7 +43,6 @@ function SearchContainer(){
                 </div>
 
             </form>
-
         </div>
 
     )
