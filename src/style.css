@@ -152,7 +152,7 @@ a:visited{
   width: auto;
 }
 
-#book-search-icon{
+.book-search-icon{
   top: 7px;
   width: 25px;
   position: relative;
@@ -160,12 +160,12 @@ a:visited{
   opacity: 65%;
 }
 
-#book-search-icon:hover{
+.book-search-icon:hover{
   opacity: 100%;
   cursor: pointer;
 }
 
-#book-search-icon:active{
+.book-search-icon:active{
   opacity: 75%;
   width: 23px;
 }
