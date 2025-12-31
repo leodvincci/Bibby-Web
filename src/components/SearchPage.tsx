@@ -6,5 +6,4 @@ function SearchPage(){
         )
 }
 
-
 export {SearchPage}
