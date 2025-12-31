@@ -112,7 +112,7 @@ nav{
 
 .page-title{
   color: #00296B;
-  font-weight: 150;
+  font-weight: 200;
   letter-spacing: 5px;
   font-size: 32px;
   margin-top: 125px;
@@ -150,6 +150,7 @@ a:visited{
 
 .search-container{
   width: auto;
+  /*border: 1px solid crimson;*/
 }
 
 .book-search-icon{
@@ -168,4 +169,29 @@ a:visited{
 .book-search-icon:active{
   opacity: 75%;
   width: 23px;
+}
+
+.search-by-radio-options{
+  margin-top: 35px;
+  /*border: 1px solid crimson;*/
+  display: flex;
+  width: 75%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.search-by-label{
+  font-size: 13px;
+  font-weight: 350;
+  margin-left:15px;
+  color: #00296B;
+
+}
+
+.search-form{
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
