@@ -124,8 +124,9 @@ a:visited{
 
 #search-input{
   color: rgba(0, 41, 107, 0.78);
+  text-align: left;
   font-size: 18px;
-  padding: 0 80px;
+  padding: 0 90px;
   background-color: #fffafa;
   margin-top: 25px;
   width: 1000px;
@@ -145,4 +146,26 @@ a:visited{
 
 #search-input:focus{
   outline-color: rgba(0, 41, 107, 0.16);
+}
+
+.search-container{
+  width: auto;
+}
+
+#book-search-icon{
+  top: 7px;
+  width: 25px;
+  position: relative;
+  right:75px;
+  opacity: 65%;
+}
+
+#book-search-icon:hover{
+  opacity: 100%;
+  cursor: pointer;
+}
+
+#book-search-icon:active{
+  opacity: 75%;
+  width: 23px;
 }
