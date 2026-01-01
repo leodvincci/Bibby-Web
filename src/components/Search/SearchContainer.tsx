@@ -39,6 +39,11 @@ function SearchContainer(){
                         <label className={"search-by-label"} htmlFor={"author-radio"}>Author</label>
                     </section>
 
+                    <section className={"search-option-radio"}>
+                        <input id={"tags-radio"} type={"radio"} name={"search-by"} value="tags" />
+                        <label className={"search-by-label"} htmlFor={"tags-radio"}>Tags</label>
+                    </section>
+
                 </div>
 
             </form>
