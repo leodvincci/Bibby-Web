@@ -192,7 +192,7 @@ nav{
   margin-top: 20px;
   display: flex;
   width: 75%;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
