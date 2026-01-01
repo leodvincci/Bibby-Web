@@ -1,10 +1,12 @@
+ /* =========================================================
+     0) Base Reset + Global Defaults
+     ========================================================= */
 *{
   border: 0;
   margin: 0;
-  font-family: Inter,sans-serif;
+  font-family: Inter, sans-serif;
   text-decoration: none;
 }
-
 
 html{
   width: 100vw;
@@ -12,12 +14,45 @@ html{
   background-color: #FFFAFA;
 }
 
-nav{
+a:visited{
+  color: inherit;
+}
 
+/* =========================================================
+   1) Shared Utilities / Common Components
+   ========================================================= */
+.btn{
+  text-align: center;
+  width: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+  background-color: #00296B;
+  color: whitesmoke;
+  border-radius: 5px;
+}
+
+.btn:hover{
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn:active{
+  background-color: #011840;
+}
+
+.dark-mode{
+  background-color: #121212;
+  color: #000000;
+}
+
+/* =========================================================
+   2) Navigation
+   ========================================================= */
+nav{
   display: flex;
   align-items: center;
   flex-direction: row;
-  /*border: 2px solid crimson;*/
   font-weight: 200;
   font-size: 24px;
   color: #011840;
@@ -25,7 +60,10 @@ nav{
   height: 115px;
   background-color: #fbf8f8;
   padding: 0 40px;
+}
 
+.bibby-mark{
+  width: 40px;
 }
 
 #bibby-logo{
@@ -37,25 +75,11 @@ nav{
   padding-right: 10px;
 }
 
-/*#bibby-logo::first-letter{*/
-/*  margin-left: 30px;*/
-/*  font-weight: 800;*/
-/*  font-size: 64px;*/
-/*  color:#00296B;*/
-
-/*}*/
-
-
-.bibby-mark{
-  width: 40px;
-}
-
 .tag-name{
   font-size: 13px;
 }
 
 #nav-items{
-  /*border: 1px solid crimson;*/
   flex: 1;
   width: auto;
   font-size: 15px;
@@ -78,37 +102,13 @@ nav{
 }
 
 #sign-in-btn{
-
-}
-.btn{
-  text-align: center;
-  width: 50px;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 10px;
-  background-color: #00296B;
-  color: whitesmoke;
-  border-radius: 5px;
+  /* Intentionally empty for now */
 }
 
-.btn:active{
-
-  background-color: #011840;
-}
-
-.btn:hover{
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.dark-mode{
-  background-color: #121212;
-  color: #000000;
-}
-
-/*Search */
+/* =========================================================
+   3) Search Page Layout + Titles
+   ========================================================= */
 .search-page{
-  /*border: 2px solid crimson;*/
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -117,79 +117,26 @@ nav{
 }
 
 .page-title{
-  color: #305066;
-  font-weight: 250;
-  letter-spacing: 5px;
+  color: #002258;
+  font-weight: 900;
+  letter-spacing: 1px;
   font-size: 32px;
   margin-top: 135px;
 }
 
-a:visited{
-  color: inherit;
-}
-
-#search-input{
-  color: rgba(0, 41, 107, 0.78);
-  text-align: left;
-  font-size: 18px;
-  padding: 0 90px;
-  background-color: #fffafa;
-  margin-top: 25px;
-  width: 750px;
-  height: 60px;
-  border-radius: 30px;
-  border: 1px solid rgba(78, 78, 78, 0.09);
-  box-shadow: rgba(0, 0, 0, 0.06) 1px 1px 5px 1px;
-}
-
-
-
-#search-input::placeholder{
+.page-subtitle{
+  color: #023047;
   font-size: 16px;
-  color: rgba(73, 73, 73, 0.37);
+  font-weight: 350;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
-#search-input:focus{
-  outline-color: rgba(0, 41, 107, 0.16);
-}
-
+/* =========================================================
+   4) Search Form (Input + Icon + Radio Options)
+   ========================================================= */
 .search-container{
   width: auto;
-  /*border: 1px solid crimson;*/
-}
-
-.book-search-icon{
-  top: 7px;
-  width: 25px;
-  position: relative;
-  right:75px;
-  opacity: 95%;
-}
-
-.book-search-icon:hover{
-  opacity: 100%;
-  cursor: pointer;
-}
-
-.book-search-icon:active{
-  opacity: 75%;
-  width: 23px;
-}
-
-.search-by-radio-options{
-  margin-top: 35px;
-  /*border: 1px solid crimson;*/
-  display: flex;
-  width: 75%;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.search-by-label{
-  font-size: 13px;
-  font-weight: 350;
-  margin-left:15px;
-  color: rgba(0, 41, 107, 0.79);
 }
 
 .search-form{
@@ -200,23 +147,77 @@ a:visited{
   flex-direction: column;
 }
 
+#search-input{
+  color: rgba(0, 41, 107, 0.78);
+  text-align: left;
+  font-size: 18px;
+  padding: 0 90px;
+  background-color: #fffafa;
+  margin-top: 10px;
+  width: 750px;
+  height: 60px;
+  border-radius: 30px;
+  border: 1px solid rgba(78, 78, 78, 0.09);
+  box-shadow: rgba(0, 0, 0, 0.06) 1px 1px 5px 1px;
+}
+
+#search-input::placeholder{
+  font-size: 16px;
+  color: rgba(73, 73, 73, 0.37);
+}
+
+#search-input:focus{
+  outline-color: rgba(0, 41, 107, 0.16);
+}
+
+.book-search-icon{
+  top: 7px;
+  width: 25px;
+  position: relative;
+  right: 65px;
+  opacity: 85%;
+}
+
+.book-search-icon:hover{
+  opacity: 95%;
+  cursor: pointer;
+}
+
+.book-search-icon:active{
+  opacity: 85%;
+  width: 24px;
+}
+
+.search-by-radio-options{
+  margin-top: 20px;
+  display: flex;
+  width: 75%;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 .search-option-radio{
-  accent-color: #3493d3;
+  accent-color: #023047;
   text-align: center;
   padding: 10px 25px;
   border-radius: 10px;
-  /*background-color: rgba(200, 200, 200, 0.05);*/
 }
 
+.search-by-label{
+  font-size: 13px;
+  font-weight: 625;
+  margin-left: 15px;
+  color: #002258;
+}
 
+/* =========================================================
+   5) Results Container
+   ========================================================= */
 .results-title{
-  /*border: 2px dotted crimson;*/
   width: 90%;
   font-weight: 500;
   color: rgba(1, 24, 64, 0.75);
   font-size: 18px;
-
 }
 
 .search-result-container{
@@ -226,7 +227,7 @@ a:visited{
   padding: 2%;
   margin-top: 25px;
   height: 350px;
-  width: 90%
+  width: 90%;
 }
 
 .search-result-container > hr{
@@ -236,16 +237,17 @@ a:visited{
   height: 1px;
 }
 
+/* =========================================================
+   6) Results Table
+   ========================================================= */
 #myTable{
   width: 100%;
   height: auto;
-  /*border: 1px solid crimson;*/
-  /*border-collapse: collapse;*/
 }
 
 .header-row{
   text-align: left;
-
+  color: #305066;
   height: auto;
   width: 100%;
 }
@@ -254,32 +256,50 @@ a:visited{
   height: auto;
   width: 100%;
   font-weight: 300;
-
 }
 
-.table-row  td {
-  /*border: 1px solid crimson;*/
+.table-row td{
   padding: 15px 0;
   font-size: 18px;
+  font-weight: 400;
   color: rgba(0, 24, 56, 0.87);
-}
-
-
-.view-book-icon{
-  width: 24px;
-}
-
-.view-book-icon:hover{
-    cursor: pointer;
-    opacity: 85%;
-}
-
-.view-book-icon:active{
-    opacity: 65%;
-    width: 22px;
 }
 
 .col-1{
   width: 100px;
   text-align: center;
 }
+
+tbody:nth-child(even){
+  background-color: rgba(179, 179, 179, 0.05);
+}
+
+/* =========================================================
+   7) Icons (Table Actions)
+   ========================================================= */
+.view-book-icon{
+  color: #356388;
+  width: 24px;
+}
+
+.view-book-icon:hover{
+  cursor: pointer;
+  opacity: 85%;
+  color: #5284ae;
+}
+
+.view-book-icon:active{
+  opacity: 65%;
+  color: #086aa8;
+  width: 22px;
+}
+
+/* =========================================================
+   8) Archived / Notes
+   ========================================================= */
+/*#bibby-logo::first-letter{
+  margin-left: 30px;
+  font-weight: 800;
+  font-size: 64px;
+  color:#00296B;
+}*/
