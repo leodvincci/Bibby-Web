@@ -24,7 +24,7 @@ function SearchResults(){
                     <td>9780321605788</td>
                     <td>Agile Product Management with Scrum</td>
                     <td>Roman Pichler</td>
-                    <td>Not Set</td>
+                    <td>Office • Main • Shelf 2</td>
                 </tr>
                 </tbody>
 
@@ -53,7 +53,7 @@ function SearchResults(){
                     </td>                    <td>9780735211292</td>
                     <td>Atomic Habits</td>
                     <td>James Clear</td>
-                    <td>Office • Main • Shelf 2</td>
+                    <td>Book Cart</td>
                 </tr>
                 </tbody>
 

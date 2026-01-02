@@ -13,6 +13,8 @@ function SearchContainer(){
 
             <form className={'search-form'} action={userSearchSelection}>
 
+
+
                 <div>
                     <label htmlFor={"search-input"}  aria-label={"book search input"}></label>
                     <input id={"search-input"} type={"text"} placeholder={"e.g. 9780517542095"} />
@@ -23,20 +25,23 @@ function SearchContainer(){
                 <div className={"search-by-radio-options"}>
 
                     <section className={"search-option-radio"}>
-                        <input  defaultChecked={true} id="isbn-radio" type={"radio"} name={"search-by"} value="isbn"/>
-                        <label className={"search-by-label"} htmlFor={"isbn-radio"}>ISBN</label>
-                    </section>
-
-
-                    <section className={"search-option-radio"}>
-                        <input id={"title-radio"} type={"radio"} name={"search-by"} value="title"/>
+                        <input defaultChecked={true} id={"title-radio"} type={"radio"} name={"search-by"} value="title"/>
                         <label className={"search-by-label"} htmlFor={"title-radio"}>Title</label>
                     </section>
-
 
                     <section className={"search-option-radio"}>
                         <input id={"author-radio"} type={"radio"} name={"search-by"} value="author" />
                         <label className={"search-by-label"} htmlFor={"author-radio"}>Author</label>
+                    </section>
+
+                    <section className={"search-option-radio"}>
+                        <input  id="publisher-radio" type={"radio"} name={"search-by"} value="publisher"/>
+                        <label className={"search-by-label"} htmlFor={"publisher-radio"}>Publisher</label>
+                    </section>
+
+                    <section className={"search-option-radio"}>
+                        <input  id="isbn-radio" type={"radio"} name={"search-by"} value="isbn"/>
+                        <label className={"search-by-label"} htmlFor={"isbn-radio"}>ISBN</label>
                     </section>
 
                     <section className={"search-option-radio"}>
