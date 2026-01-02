@@ -17,9 +17,10 @@ function SearchContainer(props:any){
 
 
 
-                <div>
+                <div className={"search-input-container"}>
                     <label htmlFor={"search-input"}  aria-label={"book search input"}></label>
                     <input id={"search-input"} name={"search-input"} type={"text"} placeholder={"e.g. 9780517542095"} />
+                    <p className={"search-bar-divider"}> </p>
                     <button  type={"submit"} className={"book-search-icon search-btn"} style={{ border: "none", background: "none", padding: 0,height:".05px",width:".05px", position:"static"}}> <img className={"book-search-icon"} src={"../../public/bookSearchIcon.png"} alt={"book icon"}/> </button>
                 </div>
 

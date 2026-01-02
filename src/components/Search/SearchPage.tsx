@@ -35,20 +35,23 @@ function SearchPage(){
     }
     return(
         <section className="search-page">
-            <p className="page-title">Search the stacks</p>
+            <p className="page-title">Search the <span id={"span-title"}>stacks</span><img
+
+                className={"animate__animated animate__bounce animate__delay-1s animate__repeat-2"} id="book-stack-icon"
+                src={"public/bookStack2.png"}/></p>
             <p className={"page-subtitle"}>ISBN, title, author, publisher, or tags</p>
 
             <SearchContainer
-            searchResult={searchResult}
+                searchResult={searchResult}
 
             />
             <SearchResultContainer
-            searchResults={searchResults}
-            searchResultCount={searchResultCount}
+                searchResults={searchResults}
+                searchResultCount={searchResultCount}
             />
 
         </section>
-        )
+    )
 }
 
 export {SearchPage}
