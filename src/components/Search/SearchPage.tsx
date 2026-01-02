@@ -7,7 +7,7 @@ function SearchPage(){
     return(
         <section className="search-page">
             <p className="page-title">Search the stacks</p>
-            <p className={"page-subtitle"}>ISBN, title, author, or tags</p>
+            <p className={"page-subtitle"}>ISBN, title, author, publisher, or tags</p>
 
             <SearchContainer/>
             <SearchResultContainer
