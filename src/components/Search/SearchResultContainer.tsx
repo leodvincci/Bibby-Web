@@ -5,9 +5,11 @@ function SearchResultContainer(props:any){
 
     return(
         <div className={"search-result-container"}>
-            <p className="results-title">Results ({props.resultCount})</p>
+            <p className="results-title">Results (4)</p>
             <hr/>
-            <SearchResults/>
+            <SearchResults
+            searchResults={props.searchResults}
+            />
 
         </div>
     )

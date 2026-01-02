@@ -1,10 +1,12 @@
-function SearchContainer(){
+function SearchContainer(props:any){
 
 
 
     function userSearchSelection(formData:any){
         const userSearchSelection = formData.get("search-by")
-        console.log(userSearchSelection)
+        const userSearchInput = formData.get("search-input")
+
+        props.searchResult(userSearchSelection,userSearchInput);
     }
 
     return(
@@ -17,7 +19,7 @@ function SearchContainer(){
 
                 <div>
                     <label htmlFor={"search-input"}  aria-label={"book search input"}></label>
-                    <input id={"search-input"} type={"text"} placeholder={"e.g. 9780517542095"} />
+                    <input id={"search-input"} name={"search-input"} type={"text"} placeholder={"e.g. 9780517542095"} />
                     <button  type={"submit"} className={"book-search-icon search-btn"} style={{ border: "none", background: "none", padding: 0,height:".05px",width:".05px", position:"static"}}> <img className={"book-search-icon"} src={"../../public/bookSearchIcon.png"} alt={"book icon"}/> </button>
                 </div>
 
