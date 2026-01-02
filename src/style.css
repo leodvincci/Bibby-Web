@@ -1,4 +1,43 @@
- /* =========================================================
+/* Import only the scales you need */
+
+@import "@radix-ui/colors/sky.css";
+
+
+/* Use the colors as CSS variables */
+@import "@radix-ui/colors/sky.css";
+
+.rt-Button.button {
+  background-color: #112840;
+  color: #ffffff;
+}
+
+.rt-Button.button:hover {
+  background-color: #113555;
+  cursor: pointer;
+
+}
+
+
+/* =========================================================
+   CSS Variables for Theming
+   ========================================================= */
+:root{
+  --bibby-book-orange-color: #d18744;
+  --bibby-ored-color: #f95738;
+  --bibby-blue-color: #0D3B66;
+    --bibby-darkblue-color: #023047;
+  --bibby-yellow-color: #F4D35E;
+    --bibby-lightyellow-color: #FAF0CA;
+
+
+}
+
+#span-title{
+    font-weight: 1000;
+    color: #E58A3E;
+}
+
+/* =========================================================
      0) Base Reset + Global Defaults
      ========================================================= */
 *{
@@ -58,7 +97,7 @@ nav{
   color: #011840;
   width: auto;
   height: 115px;
-  background-color: #fbf8f8;
+  background-color: #fafafa;
   padding: 0 40px;
 }
 
@@ -70,9 +109,12 @@ nav{
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 400;
-  color: #305066;
   padding-left: 3px;
   padding-right: 10px;
+}
+
+#bibby-logo{
+  color: var(--bibby-blue-color);
 }
 
 .tag-name{
@@ -93,7 +135,7 @@ nav{
 }
 
 #nav-items > li:hover{
-  color: #494949;
+  color: #EE964B;
   cursor: pointer;
 }
 
@@ -103,6 +145,8 @@ nav{
 
 #sign-in-btn{
   /* Intentionally empty for now */
+  background-color: #0D3B66
+
 }
 
 /* =========================================================
@@ -112,12 +156,12 @@ nav{
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #FFFAFA;
+  background-color: #ffffff;
   width: auto;
 }
 
 .page-title{
-  color: #002258;
+  color: #0D3B66;
   font-weight: 900;
   letter-spacing: 1px;
   font-size: 32px;
@@ -139,6 +183,13 @@ nav{
   width: auto;
 }
 
+.search-input-container{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  /*border: 1px solid crimson;*/
+}
+
 .search-form{
   height: auto;
   display: flex;
@@ -148,34 +199,37 @@ nav{
 }
 
 #search-input{
-  color: rgba(0, 41, 107, 0.78);
+  color: #EE964B;
   text-align: left;
   font-size: 18px;
   padding: 0 90px;
-  background-color: #fffafa;
+  background-color: #f8f8f8;
   margin-top: 10px;
   width: 750px;
   height: 60px;
   border-radius: 30px;
   border: 1px solid rgba(78, 78, 78, 0.09);
-  box-shadow: rgba(0, 0, 0, 0.06) 1px 1px 5px 1px;
+  box-shadow: 0 2px 10px rgba(13,59,102,0.06);
+
 }
 
 #search-input::placeholder{
   font-size: 16px;
-  color: rgba(73, 73, 73, 0.37);
+  color: rgba(73, 73, 73, 0.55);
 }
 
 #search-input:focus{
-  outline-color: rgba(0, 41, 107, 0.16);
+  outline-color: whitesmoke;
+  border: 1px solid #EE964B;
+  box-shadow: 0 0 0 4px rgba(238,150,75,0.18);
 }
 
 .book-search-icon{
-  top: 7px;
-  width: 25px;
+  bottom: 7px;
+  width: 23px;
   position: relative;
-  right: 65px;
-  opacity: 85%;
+  right: 61px;
+  opacity: 80%;
 }
 
 .book-search-icon:hover{
@@ -188,25 +242,33 @@ nav{
   width: 24px;
 }
 
+.search-bar-divider{
+  position: relative;
+  right: 85px;
+  border-left: 2px solid rgba(207, 207, 207, 0.31);
+  height: 40px;
+  margin-top: 10px;
+}
+
 .search-by-radio-options{
   margin-top: 20px;
   display: flex;
-  width: 75%;
-  justify-content: center;
+  width: 60%;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .search-option-radio{
   accent-color: #023047;
   text-align: center;
-  padding: 10px 25px;
+  padding: 10px 0;
   border-radius: 10px;
 }
 
 .search-by-label{
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 625;
-  margin-left: 15px;
+  margin-left: 10px;
   color: #002258;
 }
 
@@ -222,7 +284,7 @@ nav{
 
 .search-result-container{
   box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
-  background-color: #FFFAFA;
+  background-color: #fafafa;
   border-radius: 15px;
   padding: 2%;
   margin-top: 25px;
@@ -278,20 +340,25 @@ tbody:nth-child(even){
    7) Icons (Table Actions)
    ========================================================= */
 .view-book-icon{
-  color: #356388;
+
+  color: #EE964B;
   width: 24px;
 }
 
 .view-book-icon:hover{
   cursor: pointer;
   opacity: 85%;
-  color: #5284ae;
+  color: #df9729;
 }
 
 .view-book-icon:active{
   opacity: 65%;
-  color: #086aa8;
+  color: #ac6f3c;
   width: 22px;
+}
+
+.hide{
+    display: none;
 }
 
 /* =========================================================
@@ -303,3 +370,80 @@ tbody:nth-child(even){
   font-size: 64px;
   color:#00296B;
 }*/
+
+#book-stack-icon{
+  position: relative;
+  top: 4px;
+  width: 33px;
+  margin-left: 1px;
+}
+
+.orange-hover{
+    color: var(--bibby-book-orange-color);
+}
+
+
+/* Wrapper: keeps it aligned with the search bar width */
+.search-controls{
+  width: min(720px, 92vw);
+  margin: 12px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container pill */
+.segmented{
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+
+  /* warm paper tint + subtle navy hairline */
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(13, 59, 102, 0.10);
+}
+
+/* Each segment button */
+.seg{
+  all: unset; /* removes default button styles */
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seg:hover{
+  background: rgba(229, 138, 62, 0.05);
+}
+
+.segLabel{
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(13, 59, 102, 0.85);
+  user-select: none;
+}
+
+/* Selected state (Radix sets data-state="checked") */
+.seg[data-state="checked"]{
+  background: #ffffff;
+  border: 1px solid rgba(13, 59, 102, 0.14);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.seg[data-state="checked"] .segLabel{
+  font-weight: 800;
+  color: #0D3B66;
+}
+
+/* Keyboard focus (Radix uses :focus-visible nicely) */
+.seg:focus-visible{
+  outline: 3px solid rgba(244, 211, 94, 0.55); /* maize highlight */
+  outline-offset: 2px;
+}
+
+/* Optional: tiny press feedback */
+.seg:active{
+  transform: scale(0.985);
+}
