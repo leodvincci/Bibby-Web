@@ -5,13 +5,22 @@ import * as React from "react";
 function SearchPage(){
     // const searchResultCount:number = 4;
     const [searchResults, setSearchResults] = React.useState("");
+    const [searchResultCount, setSearchResultCount] = React.useState<number>(-42); // -42: no search performed yet | 0: no results found | ≥1: number of results found
 
     function fetchSearchResults(isbn:string){
         fetch(`http://localhost:8080/api/v1/books/search/${isbn}`)
             .then(response => response.json())
             .then(data => {
                 console.log("Search results data:", data);
+                console.log("data length:" + data.length)
+                if(data.status === 404){
+                    console.log("No results found for the given ISBN.");
+                    setSearchResults("No results found.");
+                    setSearchResultCount(0)
+                    return;
+                }
                 setSearchResults(data);
+                setSearchResultCount(1)
             }
             )
             .catch(error => {
@@ -31,9 +40,11 @@ function SearchPage(){
 
             <SearchContainer
             searchResult={searchResult}
+
             />
             <SearchResultContainer
             searchResults={searchResults}
+            searchResultCount={searchResultCount}
             />
 
         </section>

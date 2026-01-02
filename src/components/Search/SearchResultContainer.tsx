@@ -1,11 +1,14 @@
 import {SearchResults} from "./SearchResults.tsx";
 
 function SearchResultContainer(props:any){
-    // const resultCount = 0; // This would be dynamically set based on actual search results
+    let hidden = ""
+    if(props.searchResultCount === -42){
+        return
+    }
 
     return(
         <div className={"search-result-container"}>
-            <p className="results-title">Results (4)</p>
+            <p className={`results-title ${hidden}`}>Results ({props.searchResultCount})</p>
             <hr/>
             <SearchResults
             searchResults={props.searchResults}
