@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import {SearchPage} from "../Search/SearchPage.tsx";
 import bibbyMark2 from "../../../public/bibbyMark2.png"
+import {Button} from "@radix-ui/themes";
 
 function Nav(){
     return(
@@ -16,7 +17,7 @@ function Nav(){
                 <li>Booklists</li>
             </ul>
 
-            <p id={"sign-in-btn"} className={"btn"}>Login</p>
+                <Button className={"button"}>Sign-In</Button>
         </nav>
 
 
