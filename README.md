@@ -1,2 +1,2 @@
 # Bibby
-<img width="3000" height="1700" alt="HeyBibby" src="https://github.com/user-attachments/assets/7b211683-0f25-4874-bb7d-70cd2e41a687" />
+<img width="3456" height="2234" alt="image" src="https://github.com/user-attachments/assets/7d253003-061d-427f-a683-4e0b5b53500d" />
