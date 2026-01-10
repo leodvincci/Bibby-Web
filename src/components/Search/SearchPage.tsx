@@ -1,3 +1,4 @@
+import { Nav } from "../Nav/Nav.tsx";
 import {SearchContainer} from "./SearchContainer.tsx";
 import {SearchResultContainer} from "./SearchResultContainer.tsx";
 import * as React from "react";
@@ -35,6 +36,7 @@ function SearchPage(){
     }
     return(
         <section className="search-page">
+            <Nav/>
             <p className="page-title">Search the
                 <span id={"span-title"}>stacks</span>
                 <img className={"animate__animated animate__bounce animate__delay-1s animate__repeat-2"} id="book-stack-icon" src={"public/bookStack2.png"}/></p>

@@ -97,7 +97,9 @@ nav{
   color: #011840;
   width: auto;
   height: 115px;
-  background-color: #fafafa;
+  /*background-color: #fafafa;*/
+  background-color: #FBFBFB;
+
   padding: 0 40px;
 }
 
@@ -157,6 +159,7 @@ nav{
   align-items: center;
   flex-direction: column;
   background-color: #ffffff;
+
   width: auto;
 }
 
@@ -447,3 +450,19 @@ tbody:nth-child(even){
 .seg:active{
   transform: scale(0.985);
 }
+
+
+#registration-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.reg-background{
+    background-image: url("/home/leodpenrose/WebstormProjects/bibby-web/public/Gemini_Generated_Image_9r0zgk9r0zgk9r0z.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
