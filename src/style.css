@@ -456,7 +456,7 @@ tbody:nth-child(even){
   width: 100vw;
   height: 100vh;
 
-  background-image: url("../public/bookBackground.png");
+  background-image: url("../public/bookBackground2.png");
   background-size: cover;
   background-position: center;
 }
@@ -469,13 +469,24 @@ tbody:nth-child(even){
 
 
 .registration-container{
+  display: flex;
+    padding-left: 100px;
     background-color: #fbf7ece5;
-    width: 34%;
+ width: 620px;
+  max-width: 30vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
+}
+
+@media(min-width:2000px){
+    .registration-container{
+    width: 920px;
+    max-width: 34vw;
+    }
+  
 }
 
 .bibby-logo{
