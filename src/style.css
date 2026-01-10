@@ -452,17 +452,45 @@ tbody:nth-child(even){
 }
 
 
+.reg-background{
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("../public/bookBackground.png");
+  background-size: cover;
+  background-position: center;
+}
+
 #registration-page{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     width: 100vw;
 }
 
-.reg-background{
-    background-image: url("/home/leodpenrose/WebstormProjects/bibby-web/public/Gemini_Generated_Image_9r0zgk9r0zgk9r0z.png");
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+
+
+.registration-container{
+    background-color: #fbf7ece5;
+    width: 34%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
+}
+
+.bibby-logo{
+    position: absolute;
+    width: 360px;
+    top: 50px;
+    left: 5%;
+}
+
+.call-to-action{
+    width: auto;
+    padding-left: 15%;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 32px;
+    color: #5EA4B8;
+    letter-spacing: 1px;
   }
