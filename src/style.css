@@ -456,9 +456,17 @@ tbody:nth-child(even){
   width: 100vw;
   height: 100vh;
 
-  background-image: url("../public/bookBackground2.png");
+  background-image: url("../public/bookBackground21.png");
   background-size: cover;
   background-position: center;
+}
+
+.login-background{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../public/bookbackground17.png");
+  background-size: cover;
+  background-position: top;
 }
 
 #registration-page{
@@ -471,9 +479,22 @@ tbody:nth-child(even){
 .registration-container{
   display: flex;
     padding-left: 100px;
-    background-color: #fbf7ece5;
+    background-color: #FDF9F7;
  width: 620px;
   max-width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
+}
+
+.login-container{
+  display: flex;
+    padding-left: 100px;
+    background-color: #FEFBF8;
+ width: 720px;
+  max-width: 80vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -488,11 +509,25 @@ tbody:nth-child(even){
     left: 105px;
 }
 
-@media (min-width: 1900px){
+@media (min-width: 1950px){
   .registration-container{
     width: 720px;
     max-width: 34vw;
     padding-left: 250px;
+  }
+
+  .bibby-logo{
+    width: 360px;
+    top: 60px;
+    left: 250px;
+  }
+}
+
+@media (min-width: 1950px){
+  .login-container{
+    width: 940px;
+    max-width: 33vw;
+    padding-left: 300px;
   }
 
   .bibby-logo{
@@ -507,11 +542,11 @@ tbody:nth-child(even){
 
 .call-to-action{
     width: auto;
-    padding-left: 15%;
     margin-top: 20px;
+    margin-bottom: 15px;
     font-weight: 600;
     font-size: 32px;
-    color: #5EA4B8;
+    color: #418a9e;
     letter-spacing: 1px;
   }
 
@@ -627,4 +662,26 @@ tbody:nth-child(even){
     flex-direction: column;
     justify-content: space-evenly;
     gap: 15px;
+}
+
+.subtitle{
+    font-size: 22px;
+    font-weight: 300;
+    color: #5EA4B8;
+    margin-top: 10px;
+}
+
+.registration-section{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.forgot-password{
+    font-size: 14px;
+    color: #418a9e;
+    font-weight: 500;
+    margin-top: 1px;
+    cursor: pointer;
 }
