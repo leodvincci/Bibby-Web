@@ -456,7 +456,7 @@ tbody:nth-child(even){
   width: 100vw;
   height: 100vh;
 
-  background-image: url("../public/bookBackground21.png");
+  background-image: url("../public/bookBackground424.png");
   background-size: cover;
   background-position: center;
 }
@@ -478,21 +478,22 @@ tbody:nth-child(even){
 
 .registration-container{
   display: flex;
-    padding-left: 100px;
-    background-color: #FDF9F7;
- width: 620px;
-  max-width: 30vw;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+ 
+    background-color: #ebd1ac47;
+ width: 700px;
+  max-width: 35vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
+    border-radius: 0px 80px 0px 0px;
+    box-shadow: 1px 1px 88px 1px rgba(0, 0, 0, 0.06);
 }
 
 .login-container{
   display: flex;
     padding-left: 100px;
-    background-color: #FEFBF8;
+    background-color: #FBF6F4;
  width: 720px;
   max-width: 80vw;
     height: 100vh;
@@ -511,9 +512,9 @@ tbody:nth-child(even){
 
 @media (min-width: 1950px){
   .registration-container{
-    width: 720px;
-    max-width: 34vw;
-    padding-left: 250px;
+    width: 1220px;
+    max-width: 38vw;
+    padding-left: 20px;
   }
 
   .bibby-logo{
@@ -528,6 +529,7 @@ tbody:nth-child(even){
     width: 940px;
     max-width: 33vw;
     padding-left: 300px;
+    
   }
 
   .bibby-logo{
@@ -542,17 +544,17 @@ tbody:nth-child(even){
 
 .call-to-action{
     width: auto;
-    margin-top: 20px;
+    padding: 20px;
     margin-bottom: 15px;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 24px;
     color: #418a9e;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
   }
 
   .gsi-material-button {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 35px;
+
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -672,10 +674,18 @@ tbody:nth-child(even){
 }
 
 .registration-section{
-    margin-top: 70px;
+    border-radius: 30px;
+
+    box-shadow: 0 2px 10px rgba(13,59,102,0.06);
+    background-color: #f0f0f087;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    padding: 45px 50px;
+    width: 500px;
+    margin-top: 150px;
+
 }
 
 .forgot-password{
@@ -685,3 +695,23 @@ tbody:nth-child(even){
     margin-top: 1px;
     cursor: pointer;
 }
+
+.registration-header-text{
+    position: absolute;
+    top: 220px;
+    color: #418a9e;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center; 
+    left: 110px;
+  }
+
+  .have-an-account{
+    position: absolute;
+    bottom: 40px;
+    color: #418a9e;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center; 
+    left: 220px;
+  }

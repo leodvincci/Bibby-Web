@@ -9,6 +9,11 @@ function RegistrationPage() {
         const lastName = formData.get('lastName');
         const email = formData.get('email');
         const password = formData.get('password');
+        const confirmPassword = formData.get('confirmPassword');
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
 
         console.log("Sending to backend:", { firstName, lastName, email, password });
     }
@@ -19,8 +24,11 @@ function RegistrationPage() {
 
             <div className="registration-container">
                 <img className="bibby-logo" src={BibbyLogo} alt="book background" />
-                {/* <p>A home for your shelves.</p>
-                <p>Bibby builds your library.</p> */}
+                {/* <div className="registration-header-text">
+                    <p>A home for your shelves.</p>
+                    <p>Bibby builds your library.</p>
+                </div>
+  */}
 
                 <section className="registration-section">
 
@@ -29,23 +37,24 @@ function RegistrationPage() {
                     <form action={handleSubmit} className="registration-form">
 
 
+
                         <Flex direction="column" gap="3">
                             <label htmlFor="firstName">First Name
                                 <Box maxWidth="500px">
-                                    <TextField.Root size="3" aria-label="first name" name="firstName" placeholder="First Name" />
+                                    <TextField.Root size="3" aria-label="first name" name="firstName" placeholder="Bibbly" />
                                 </Box>
                             </label>
 
                             <label htmlFor="lastName">Last Name
                                 <Box maxWidth="500px">
-                                    <TextField.Root size="3" aria-label="last name" name="lastName" placeholder="Last Name" />
+                                    <TextField.Root size="3" aria-label="last name" name="lastName" placeholder="Bookish" />
                                 </Box>
                             </label>
 
                             <label htmlFor="email">Email
 
                                 <Box maxWidth="500px">
-                                    <TextField.Root size="3" type="email" aria-label="email" name="email" placeholder="Email" />
+                                    <TextField.Root size="3" type="email" aria-label="email" name="email" placeholder="thebookishbibbly@gmail.com" />
                                 </Box>
                             </label>
 
@@ -53,7 +62,14 @@ function RegistrationPage() {
                             <label htmlFor="password">Password
 
                                 <Box maxWidth="500px">
-                                    <TextField.Root size="3" aria-label="password" name="password" placeholder="Password" type="password" />
+                                    <TextField.Root size="3" aria-label="password" name="password" placeholder="bibblybookish" type="password" />
+                                </Box>
+                            </label>
+
+                            <label htmlFor="confirmPassword">Confirm Password
+
+                                <Box maxWidth="500px">
+                                    <TextField.Root size="3" aria-label="confirm password" name="confirmPassword" placeholder="bibblybookish" type="password" />
                                 </Box>
                             </label>
 
@@ -61,8 +77,8 @@ function RegistrationPage() {
                         </Flex>
                         <div className="registration-buttons">
                             <Flex gap="3" align="center">
-                                <Button color="orange" size="3" variant="solid">
-                                    Start my library
+                                <Button color="cyan" size="3" variant="solid">
+                                    Create my library
                                 </Button>
                             </Flex>
                             <button className="gsi-material-button">
@@ -87,7 +103,7 @@ function RegistrationPage() {
                 </section>
 
 
-                <p>Already have an account? <a href="/login">Sign in</a></p>
+                <p className="have-an-account" >Already have an account? <a href="/login">Sign in</a></p>
             </div>
         </div>
     )
