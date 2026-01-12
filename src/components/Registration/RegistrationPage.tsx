@@ -1,8 +1,9 @@
 import BibbyLogo from "../../../public/bibbyLogo.png";
 import { Box, Button, Flex, TextField } from "@radix-ui/themes";
+import { useNavigate } from "react-router-dom";
 
 function RegistrationPage() {
-
+    const navigate = useNavigate();
     function handleSubmit(formData: FormData) {
         // Handle form submission logic here
         const email = formData.get('email');
@@ -17,6 +18,7 @@ function RegistrationPage() {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                navigate('/login');
                 // Handle success (e.g., redirect to login page)
             })
             .catch((error) => {
