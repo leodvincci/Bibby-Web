@@ -47,12 +47,6 @@ function RegistrationPage() {
                                 </Box>
                             </label>
 
-                            <label htmlFor="confirmPassword">Confirm Password
-                                <Box maxWidth="500px">
-                                    <TextField.Root size="3" aria-label="confirm password" name="confirmPassword" placeholder="bibblybookish" type="password" />
-                                </Box>
-                            </label>
-
                         </Flex>
                         <div className="registration-buttons">
                             <Flex gap="3" align="center">
