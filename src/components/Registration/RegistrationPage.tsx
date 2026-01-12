@@ -3,11 +3,26 @@ import { Box, Button, Flex, TextField } from "@radix-ui/themes";
 
 function RegistrationPage() {
 
-    function handleSubmit(formData) {
+    function handleSubmit(formData: FormData) {
         // Handle form submission logic here
         const email = formData.get('email');
         const password = formData.get('password');
-        console.log("Sending to backend:", { email, password });
+        fetch('http://localhost:8080/api/v1/user/registration/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Handle success (e.g., redirect to login page)
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // Handle error (e.g., show error message to user)
+            });
     }
 
 
