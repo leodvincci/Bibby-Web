@@ -484,8 +484,8 @@ tbody:nth-child(even){
   justify-content: center;
  
     background-color: #F2EFE8;
-    width: 700px;
-    max-width: 35vw;
+    width: 900px;
+    max-width: 50vw;
     height: 100vh;
     border-radius: 0px 80px 0px 0px;
     box-shadow: 1px 10px 88px 1px rgba(0, 0, 0, 0.031);
