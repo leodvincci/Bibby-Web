@@ -7,12 +7,6 @@ function RegistrationPage() {
         // Handle form submission logic here
         const email = formData.get('email');
         const password = formData.get('password');
-        const confirmPassword = formData.get('confirmPassword');
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
-            return;
-        }
-
         console.log("Sending to backend:", { email, password });
     }
 
