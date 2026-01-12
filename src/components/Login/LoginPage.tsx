@@ -20,7 +20,7 @@ function LoginPage() {
             <div className="login-container">
                 <img className="bibby-logo" src={BibbyLogo} alt="book background" />
 
-                <h3 className="call-to-action">Welcome back!</h3>
+                <h3 className="call-to-action">Welcome back to your library.</h3>
                 <p className="subtitle">Find your books where you left them.</p>
 
                 <br />
@@ -50,7 +50,7 @@ function LoginPage() {
                     </Flex>
                     <div className="registration-buttons">
                         <Flex gap="3" align="center">
-                            <Button color="orange" size="3" variant="solid">
+                            <Button style={{width:"500px"}} color="cyan" size="3" variant="solid">
                                 Sign In
                             </Button>
                         </Flex>
@@ -66,7 +66,7 @@ function LoginPage() {
                                         <path fill="none" d="M0 0h48v48H0z"></path>
                                     </svg>
                                 </div>
-                                <span className="gsi-material-button-contents">Sign in with Google</span>
+                                <span className="gsi-material-button-contents">Continue with Google</span>
                                 <span style={{ display: "none" }}>Sign in with Google</span>
                             </div>
                         </button>
