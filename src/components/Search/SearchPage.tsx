@@ -38,7 +38,7 @@ function SearchPage(){
         <section className="search-page">
             <Nav/>
             <p className="page-title">Search the
-                <span id={"span-title"}>stacks</span>
+                <span id={"span-title"}> stacks</span>
                 <img className={"animate__animated animate__bounce animate__delay-1s animate__repeat-2"} id="book-stack-icon" src={"public/bookStack2.png"}/></p>
             <p className={"page-subtitle"}>ISBN, title, author, publisher, or tags</p>
 

@@ -61,7 +61,7 @@ function RegistrationPage() {
                         </Flex>
                         <div className="registration-buttons">
                             <Flex gap="3" align="center">
-                                <Button style={{ width: "500px" }} color="cyan" size="3" variant="solid">
+                                <Button  style={{ width: "500px" }} color="cyan" size="3" variant="solid">
                                     Create account
                                 </Button>
                             </Flex>
