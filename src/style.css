@@ -719,3 +719,21 @@ tbody:nth-child(even){
     font-size: 14px;
     margin: 15px 0;
   }
+
+  .add-book-form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .add-book-form > input{
+    color: #4b8a9c;
+    height: 45px;
+    width: 450px;
+    max-width: 80vw;
+    padding: 0 15px;
+    font-size: 16px;
+    border: 1px solid rgba(78, 78, 78, 0.09);
+    border-radius: 8px;
+  }
