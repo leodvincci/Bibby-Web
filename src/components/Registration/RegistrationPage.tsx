@@ -8,7 +8,7 @@ function RegistrationPage() {
         // Handle form submission logic here
         const email = formData.get('email');
         const password = formData.get('password');
-        fetch('http://localhost:8080/api/v1/books/addnewbook', {
+        fetch('http://localhost:8080/api/v1/user/registration/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
