@@ -3,12 +3,38 @@ import { Button } from "@radix-ui/themes"
 
 function AddBookPage() {
 
-    function addNewBook(formData: FormData) {
+    async function addNewBook(formData: FormData) {
         const isbn = formData.get("isbn")
         const title = formData.get("title")
-        const author = formData.get("author")
+        const authors = formData.get("authors")
         const publisher = formData.get("publisher")
-        console.log({ isbn, title, author, publisher })
+
+        try {
+            const response = await fetch("http://localhost:8080/api/v1/books/addnewbook", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    isbn,
+                    title,
+                    authors: typeof authors === "string"
+                        ? authors.split(",").map(a => a.trim()).filter(Boolean)
+                        : [],
+                    publisher
+                })
+            })
+
+            if (!response.ok) {
+                console.error("Failed to add book:", response.statusText)
+                return
+            }
+
+            const data = await response.json()
+            console.log('Success:', data)
+        } catch (error: any) {
+            console.error('Error:', error)
+        }
     }
 
 
@@ -31,9 +57,9 @@ function AddBookPage() {
                     <input name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />
                 </label>
 
-                <label htmlFor="author">
+                <label htmlFor="authors">
                     author
-                    <input name="author" type="text" placeholder="e.g. Douglas Adams" />
+                    <input name="authors" type="text" placeholder="e.g. Douglas Adams" />
                 </label>
 
                 <label htmlFor="publisher">
