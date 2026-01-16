@@ -11,7 +11,7 @@ function Nav(){
             <Link to={"/"}><p className={"tag-name"}><span style={{fontWeight:"500",color:"#002258"}}>Personal</span> Library Manager</p> </Link>
             <ul id={"nav-items"}>
                 <li> <Link to="/search"> Search </Link></li>
-                <li>Library Management</li>
+            <Link to={"/addNewBook"}> <li>Library Management</li> </Link>
                 <li>Book Cart</li>
                 <li>Booklists</li>
             </ul>
