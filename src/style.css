@@ -24,7 +24,7 @@
 :root{
   --bibby-book-orange-color: #d18744;
   --bibby-ored-color: #f95738;
-  --bibby-blue-color: #0D3B66;
+  --bibby-blue-color: #5BA0B3;
     --bibby-darkblue-color: #023047;
   --bibby-yellow-color: #F4D35E;
     --bibby-lightyellow-color: #FAF0CA;
@@ -108,9 +108,9 @@ nav{
 }
 
 #bibby-logo{
-  font-size: 18px;
+  font-size: 32px;
   letter-spacing: 2px;
-  font-weight: 400;
+  font-weight: 700;
   padding-left: 3px;
   padding-right: 10px;
 }
