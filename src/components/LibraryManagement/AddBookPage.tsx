@@ -10,10 +10,13 @@ function AddBookPage() {
         const publisher = formData.get("publisher")
 
         try {
+
             const response = await fetch("http://localhost:8080/api/v1/books/addnewbook", {
                 method: "POST",
+                credentials: "include",  
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+
                 },
                 body: JSON.stringify({
                     isbn,
