@@ -12,7 +12,7 @@ function AddBookPage() {
 
             const response = await fetch("http://localhost:8080/api/v1/books/addnewbook", {
                 method: "POST",
-                credentials: "include",  
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json",
 
@@ -46,25 +46,27 @@ function AddBookPage() {
             <Button color="cyan" variant="surface">Scan</Button>
             <Button color="cyan" variant="surface">Manual</Button>
 
-            <form action={addNewBook} className="add-book-form" >
+            <form action={addNewBook} className="  add-book-form w-65 align-center " >
+                
+                <div id="isbn-container" className="justify-space flex-row" >
+                    <label className="color-blu txt-14" htmlFor="isbn">
+                        isbn
+                        <input className="ml-30 minw-20 w-80 add-book-input-border placeholder-color-blu" name="isbn" type="text" placeholder="e.g. 9780517542095" />
+                    </label>
+                    <Button size="3" className="bth-30" type="submit" color="cyan" variant="soft">Auto-fill from ISBN</Button>
 
-                <label htmlFor="isbn">
-                    isbn
-                    <input name="isbn" type="text" placeholder="e.g. 9780517542095" />
-                </label>
+                </div>
 
                 <label htmlFor="title">
                     title
-                    <input name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />
+                    <input className="ml-30 w-100" name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />
                 </label>
 
                 <label htmlFor="authors">
                     author
-                    <input name="authors" type="text" placeholder="e.g. Douglas Adams" />
+                    <input className="ml-10 mw-80 minw-20" name="authors" type="text" placeholder="e.g. Douglas Adams" />
                 </label>
-
-
-                <Button type="submit" color="cyan" variant="solid">Add to library</Button>
+                <Button style={{width:"840px"}} className="add-to-lib-btn" type="submit" size="2" color="cyan" variant="solid">Add to library</Button>
             </form>
 
 
