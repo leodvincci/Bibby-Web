@@ -46,14 +46,14 @@ function AddBookPage() {
             <Button color="cyan" variant="surface">Scan</Button>
             <Button color="cyan" variant="surface">Manual</Button>
 
-            <form action={addNewBook} className="add-book-form w-65 align-center" >
+            <form action={addNewBook} className="  add-book-form w-65 align-center " >
                 
-                <div id="isbn-container" className="justify-center flex-row" >
-                    <label className="color-blu" htmlFor="isbn">
+                <div id="isbn-container" className="justify-space flex-row" >
+                    <label className="color-blu txt-14" htmlFor="isbn">
                         isbn
-                        <input className="ml-30 add-book-input-border placeholder-color-blu" name="isbn" type="text" placeholder="e.g. 9780517542095" />
+                        <input className="ml-30 minw-20 w-80 add-book-input-border placeholder-color-blu" name="isbn" type="text" placeholder="e.g. 9780517542095" />
                     </label>
-                    <Button size="3" className="bth-30" type="submit" color="cyan" variant="solid">Auto-fill from ISBN</Button>
+                    <Button size="3" className="bth-30" type="submit" color="cyan" variant="soft">Auto-fill from ISBN</Button>
 
                 </div>
 
@@ -64,9 +64,9 @@ function AddBookPage() {
 
                 <label htmlFor="authors">
                     author
-                    <input className="ml-10 w-100" name="authors" type="text" placeholder="e.g. Douglas Adams" />
+                    <input className="ml-10 mw-80 minw-20" name="authors" type="text" placeholder="e.g. Douglas Adams" />
                 </label>
-                <Button className="btw-50" type="submit" color="cyan" variant="solid">Add to library</Button>
+                <Button style={{width:"840px"}} className="add-to-lib-btn" type="submit" size="2" color="cyan" variant="solid">Add to library</Button>
             </form>
 
 
