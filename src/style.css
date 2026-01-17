@@ -48,7 +48,7 @@
 }
 
 html{
-  width: 100vw;
+  min-width: 100vw;
   height: 100vh;
   background-color: #FFFAFA;
 }
@@ -730,8 +730,8 @@ tbody:nth-child(even){
   .add-book-form > label > input{
     color: #4b8a9c;
     height: 45px;
-    width: 450px;
-    max-width: 80vw;
+    width: 80%;
+    max-width: 50vw;
     padding: 0 15px;
     font-size: 16px;
     border: 1px solid rgba(78, 78, 78, 0.09);
@@ -742,3 +742,32 @@ tbody:nth-child(even){
     color: rgba(73, 73, 73, 0.55);
     font-size: 14px;
   }
+
+  .border-7{
+    border: 7px solid #d18744;
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .w-50{
+    width: 50vw;
+  }
+  
+  .align-center{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ml-30{
+    margin-left: 30px;
+  }
+
+  .ml-10{
+    margin-left: 10px;
+  }
+
+  .w-100{
+    width: 100vw;
+  }
+  
+

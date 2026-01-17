@@ -46,25 +46,21 @@ function AddBookPage() {
             <Button color="cyan" variant="surface">Scan</Button>
             <Button color="cyan" variant="surface">Manual</Button>
 
-            <form action={addNewBook} className="add-book-form" >
-
+            <form action={addNewBook} className="add-book-form w-50 align-center" >
                 <label htmlFor="isbn">
                     isbn
-                    <input name="isbn" type="text" placeholder="e.g. 9780517542095" />
+                    <input className="ml-30 w-100" name="isbn" type="text" placeholder="e.g. 9780517542095" />
                 </label>
-
                 <label htmlFor="title">
                     title
-                    <input name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />
+                    <input className="ml-30 w-100" name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />
                 </label>
 
                 <label htmlFor="authors">
                     author
-                    <input name="authors" type="text" placeholder="e.g. Douglas Adams" />
+                    <input className="ml-10 w-100" name="authors" type="text" placeholder="e.g. Douglas Adams" />
                 </label>
-
-
-                <Button type="submit" color="cyan" variant="solid">Add to library</Button>
+                <Button className="btw-50" type="submit" color="cyan" variant="solid">Add to library</Button>
             </form>
 
 
