@@ -56,6 +56,7 @@ function AddBookPage() {
                     <Button size="3" className="bth-30" type="submit" color="cyan" variant="soft">Auto-fill from ISBN</Button>
 
                 </div>
+                <p className="txt-smallest ml-60 w-25">Enter the ISBN to automatically fetch book details</p>
 
                 <label htmlFor="title">
                     title
