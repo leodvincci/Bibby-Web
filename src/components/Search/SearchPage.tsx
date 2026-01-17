@@ -9,7 +9,10 @@ function SearchPage() {
     const [searchResultCount, setSearchResultCount] = React.useState<number>(-42); // -42: no search performed yet | 0: no results found | ≥1: number of results found
 
     function fetchSearchResults(isbn: string) {
-        fetch(`http://localhost:8080/api/v1/books/search/${isbn}`)
+        fetch(`http://localhost:8080/api/v1/books/search/${isbn}`,{
+            method: "GET",
+            credentials: "include",
+        })
             .then(response => response.json())
             .then(data => {
                 console.log("Search results data:", data);
