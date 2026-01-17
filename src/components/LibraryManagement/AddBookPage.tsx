@@ -12,7 +12,7 @@ function AddBookPage() {
 
             const response = await fetch("http://localhost:8080/api/v1/books/addnewbook", {
                 method: "POST",
-                credentials: "include",  
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json",
 
@@ -46,11 +46,17 @@ function AddBookPage() {
             <Button color="cyan" variant="surface">Scan</Button>
             <Button color="cyan" variant="surface">Manual</Button>
 
-            <form action={addNewBook} className="add-book-form w-50 align-center" >
-                <label htmlFor="isbn">
-                    isbn
-                    <input className="ml-30 w-100" name="isbn" type="text" placeholder="e.g. 9780517542095" />
-                </label>
+            <form action={addNewBook} className="add-book-form w-65 align-center" >
+                
+                <div id="isbn-container" className="justify-center flex-row" >
+                    <label className="color-blu" htmlFor="isbn">
+                        isbn
+                        <input className="ml-30 add-book-input-border placeholder-color-blu" name="isbn" type="text" placeholder="e.g. 9780517542095" />
+                    </label>
+                    <Button size="3" className="bth-30" type="submit" color="cyan" variant="solid">Auto-fill from ISBN</Button>
+
+                </div>
+
                 <label htmlFor="title">
                     title
                     <input className="ml-30 w-100" name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />

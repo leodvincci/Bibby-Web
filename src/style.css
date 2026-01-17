@@ -738,12 +738,17 @@ tbody:nth-child(even){
     border-radius: 8px;
   }
 
+  .color-blu{
+    color: #4b8a9c;
+    font-weight: 300;
+  }
+
   .add-book-form > label > input::placeholder{
     color: rgba(73, 73, 73, 0.55);
     font-size: 14px;
   }
 
-  .border-7{
+  .border{
     border: 7px solid #d18744;
     padding: 15px;
     border-radius: 12px;
@@ -766,8 +771,47 @@ tbody:nth-child(even){
     margin-left: 10px;
   }
 
+  .ml-15{
+    margin-left: 15px;
+  }
+
+  .w-65{
+    width: 65vw;
+  }
+
+  .w-75{
+    width: 75vw;
+  }
+  
   .w-100{
     width: 100vw;
   }
   
+  .flex{
+    display: flex;
+  }
 
+  .flex-grow-1{
+    flex-grow: 1;
+  }
+  
+  .add-book-input-border{
+    border: 1px solid rgba(78, 78, 78, 0.09);
+    border-radius: 8px;
+    height: 45px;
+    width: 70%;
+    max-width: 50vw;
+    padding: 0 15px;
+    margin-right: 25px;
+    font-size: 16px;
+    color: #4b8a9c;
+  }
+
+  .justify-center{
+    justify-content: center;
+  }
+
+  .placeholder-color-blu::placeholder{
+    font-size: small;
+    opacity: 75%;
+  }
