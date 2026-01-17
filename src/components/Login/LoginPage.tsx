@@ -3,7 +3,7 @@ import { Box, Button, Flex, TextField } from "@radix-ui/themes";
 
 function LoginPage() {
 
-    function handleSubmit(formData) {
+    function handleSubmit(formData: FormData) {
         // Handle form submission logic here
         const firstName = formData.get('firstName');
         const lastName = formData.get('lastName');

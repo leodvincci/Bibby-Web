@@ -1,7 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import {RegistrationPage} from "../Registration/RegistrationPage.tsx";
-import {SearchPage} from "../Search/SearchPage.tsx";
-import bibbyMark2 from "../../../public/bibbyMark2.png"
+import { Link } from "react-router-dom";
 
 function Nav(){
     return(

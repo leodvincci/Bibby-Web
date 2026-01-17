@@ -7,7 +7,6 @@ function AddBookPage() {
         const isbn = formData.get("isbn")
         const title = formData.get("title")
         const authors = formData.get("authors")
-        const publisher = formData.get("publisher")
 
         try {
 
@@ -24,7 +23,6 @@ function AddBookPage() {
                     authors: typeof authors === "string"
                         ? authors.split(",").map(a => a.trim()).filter(Boolean)
                         : [],
-                    publisher
                 })
             })
 
@@ -63,11 +61,6 @@ function AddBookPage() {
                 <label htmlFor="authors">
                     author
                     <input name="authors" type="text" placeholder="e.g. Douglas Adams" />
-                </label>
-
-                <label htmlFor="publisher">
-                    publisher
-                    <input name="publisher" type="text" placeholder="e.g. Pan Books" />
                 </label>
 
 

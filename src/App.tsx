@@ -1,9 +1,7 @@
 import {createRoot} from 'react-dom/client'
-import {Nav} from "./components/Nav/Nav.tsx";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
-import { BrowserRouter, Route } from 'react-router';
-import { Routes } from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { RegistrationPage } from './components/Registration/RegistrationPage.tsx';
 import { SearchPage } from './components/Search/SearchPage.tsx';
 import { LoginPage } from './components/Login/LoginPage.tsx';
