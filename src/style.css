@@ -788,8 +788,8 @@ tbody:nth-child(even){
     width: 75vw;
   }
   
-  .minw-20{
-    min-width: 545px;
+  .minw-565{
+    min-width: 565px;
   }
 
   .minw-1300{
@@ -862,4 +862,21 @@ tbody:nth-child(even){
 
   .ml-60{
     margin-left: 60px;
+  }
+
+  .mr-60{
+    margin-right: 138px;
+  }
+
+  .mt-120{
+    margin-top: 120px;
+  }
+
+
+  .blu{
+    color: #4b8a9c;
+  }
+
+  .fw-500{
+    font-weight: 500;
   }
