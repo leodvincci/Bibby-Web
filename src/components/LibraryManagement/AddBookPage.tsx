@@ -4,10 +4,37 @@ import { useRef } from "react"
 
 function AddBookPage() {
 
+    const titleRef = useRef<HTMLInputElement>(null);
+    const authorsRef = useRef<HTMLInputElement>(null);
 
     function fetchMetadata() {
         
         console.log("fetching metadata..." + ref.current?.value) 
+        fetch("http://localhost:8080/api/v1/books/fetchbookmetadata", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                isbn: ref.current?.value,
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok " + response.statusText)
+            }
+            return response.json()
+        })
+        .then(data => {
+            console.log("Fetched metadata:", data)
+            // Here you would typically update the form fields with the fetched data
+            titleRef.current!.value = data.title || ""
+            authorsRef.current!.value = (data.authors || []).join(", ")
+        })
+        .catch(error => {
+            console.error("Error fetching metadata:", error)
+        })  
     }
 
     const ref = useRef<HTMLInputElement>(null);
@@ -74,12 +101,12 @@ function AddBookPage() {
 
                 <label htmlFor="title">
                     title
-                    <input required className="ml-30 w-100" name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />
+                    <input ref={titleRef} required className="ml-30 w-100" name="title" type="text" placeholder="e.g. The Hitchhiker's Guide to the Galaxy" />
                 </label>
 
                 <label htmlFor="authors">
                     author
-                    <input required className="ml-10 mw-80 minw-20" name="authors" type="text" placeholder="e.g. Douglas Adams" />
+                    <input ref={authorsRef} required className="ml-10 mw-80 minw-20" name="authors" type="text" placeholder="e.g. Douglas Adams" />
                 </label>
                 <Button style={{ width: "840px" }} className="add-to-lib-btn" type="submit" size="2" color="cyan" variant="solid">Add to library</Button>
             </form>
