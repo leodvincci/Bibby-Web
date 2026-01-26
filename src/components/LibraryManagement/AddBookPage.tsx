@@ -1,11 +1,48 @@
 import { Nav } from "../Nav/Nav"
 import { Button } from "@radix-ui/themes"
 import { useRef } from "react"
+import { useState } from "react"
 
 function AddBookPage() {
 
     const titleRef = useRef<HTMLInputElement>(null);
     const authorsRef = useRef<HTMLInputElement>(null);
+    const locationRef = useRef<HTMLSelectElement>(null);
+    const [bookcases, setBookcases] = useState([]);
+    const [locations, setLocations] = useState([]);
+
+    var caseOptions = bookcases.map((bookcase: any) =>
+        <option key={bookcase.id} value={bookcase.id}>{bookcase.bookcaseLabel}</option>
+    );
+
+    var locationOptions = locations.map((location: any, index: number) =>
+        <option key={index} value={location}>{location}</option>
+    );
+
+
+    function fetchBookcaseLocations() {
+        fetch("http://localhost:8080/api/v1/bookcase/location", {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok " + response.statusText)
+            }
+            return response.json()
+        })
+            .then(data => {
+                console.log("Fetched locations:", data)
+                // update the location selection options with the fetched data
+                setLocations(data)
+
+            })
+            .catch(error => {
+                console.error("Error fetching locations:", error)
+            })
+    }
 
     function fetchMetadata() {
 
@@ -28,12 +65,36 @@ function AddBookPage() {
             })
             .then(data => {
                 console.log("Fetched metadata:", data)
-                // Here you would typically update the form fields with the fetched data
+                // update the form fields with the fetched data
                 titleRef.current!.value = data.title || ""
                 authorsRef.current!.value = (data.authors || []).join(", ")
             })
             .catch(error => {
                 console.error("Error fetching metadata:", error)
+            })
+    }
+
+    function fetchBookcases(location ?: string) {
+        fetch(`http://localhost:8080/api/v1/bookcase/location/${location}`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok " + response.statusText)
+            }
+            return response.json()
+        })
+            .then(data => {
+                console.log("Fetched bookcases:", data)
+                // update the bookcase selection options with the fetched data
+                setBookcases(data)
+
+            })
+            .catch(error => {
+                console.error("Error fetching bookcases:", error)
             })
     }
 
@@ -110,35 +171,44 @@ function AddBookPage() {
                     <input ref={authorsRef} required className="ml-10 mw-80 minw-20" name="authors" type="text" placeholder="e.g. Douglas Adams" />
                 </label>
 
+
                 <div className="location-selection">
                     <div>
-
-
-                        <label className="blu txt-13 mr-10 fw-300" htmlFor="Bookcase">
-                            Bookcase
+                        <label className="blu txt-13 mr-10 fw-300" htmlFor="Location">
+                            Location
                         </label>
-                        <select name="bookcases" className="mr-125 w-600 h-40 br-60 bg-grey-light">
-                            <option value={""}> Select a bookcase</option>
-                            <option value={"basement_windowside"}> Basement WindowSide</option>
-                            <option value={"office_main"}> Office Main</option>
-                            <option value={"bedroom_corner"}> Bedroom Corner</option>
+                        <select ref={locationRef} onMouseOver={fetchBookcaseLocations} name="locations" className="w-600 h-40 br-60 bg-grey-light">
+                            <option value={""}> Select a location</option>
+                            {locationOptions}
                         </select>
                     </div>
 
 
                     <div>
 
+                        <label className="blu mr-10 txt-13 fw-300 " htmlFor="Bookcase">
+                            Bookcase
+                        </label>
+
+                        <select onClick={() => fetchBookcases(locationRef.current?.value)} name="bookcases" className="w-600 h-40 br-60 bg-grey-light">
+                            <option value={""}>Select a bookcase</option>
+                            {caseOptions}
+                        </select>
+
+                    </div>
+
+
+
+
+
+                    <div>
+
                         <label className="blu mr-10 txt-13 fw-300 " htmlFor="Bookshelf">
-                            Bookshelf
+                            Shelf
                         </label>
 
                         <select name="bookshelves" className="w-600 h-40 br-60 bg-grey-light">
-                            <option value={""}>Select a bookshelf</option>
-                            <option value={"shelf_1"}>Shelf 1</option>
-                            <option value={"shelf_2"}>Shelf 2</option>
-                            <option value={"shelf_3"}>Shelf 3</option>
-                            <option value={"shelf_4"}>Shelf 4</option>
-                            <option value={"shelf_5"}>Shelf 5</option>
+                            <option value={""}>Select a shelf</option>
                         </select>
 
                     </div>
