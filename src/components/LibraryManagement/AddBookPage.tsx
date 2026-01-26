@@ -1,7 +1,7 @@
 import { Nav } from "../Nav/Nav"
 import { Button } from "@radix-ui/themes"
 import { useRef } from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function AddBookPage() {
 
@@ -98,6 +98,11 @@ function AddBookPage() {
             })
     }
 
+    useEffect(() => {
+        fetchBookcaseLocations();
+    }, []);
+    
+
     const ref = useRef<HTMLInputElement>(null);
 
     async function addNewBook(formData: FormData) {
@@ -177,7 +182,7 @@ function AddBookPage() {
                         <label className="blu txt-13 mr-10 fw-300" htmlFor="Location">
                             Location
                         </label>
-                        <select ref={locationRef} onMouseOver={fetchBookcaseLocations} name="locations" className="w-600 h-40 br-60 bg-grey-light">
+                        <select onChange={()=>fetchBookcases(locationRef.current?.value)} ref={locationRef} name="locations" className="w-600 h-40 br-60 bg-grey-light">
                             <option value={""}> Select a location</option>
                             {locationOptions}
                         </select>
@@ -190,7 +195,7 @@ function AddBookPage() {
                             Bookcase
                         </label>
 
-                        <select onClick={() => fetchBookcases(locationRef.current?.value)} name="bookcases" className="w-600 h-40 br-60 bg-grey-light">
+                        <select name="bookcases" className="w-600 h-40 br-60 bg-grey-light">
                             <option value={""}>Select a bookcase</option>
                             {caseOptions}
                         </select>
