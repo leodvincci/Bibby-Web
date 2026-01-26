@@ -10,18 +10,48 @@ function AddBookPage() {
     const locationRef = useRef<HTMLSelectElement>(null);
     const [bookcases, setBookcases] = useState([]);
     const [locations, setLocations] = useState([]);
+    const [bookshelves, setBookshelves] = useState([]);
 
     var caseOptions = bookcases.map((bookcase: any) =>
-        <option key={bookcase.id} value={bookcase.id}>{bookcase.bookcaseLabel}</option>
+        <option key={bookcase.bookcaseId} value={bookcase.bookcaseId}>{bookcase.bookcaseLabel}</option>
     );
 
     var locationOptions = locations.map((location: any, index: number) =>
         <option key={index} value={location}>{location}</option>
     );
 
+    var shelfOptions = bookshelves.map((shelf: any) =>
+        <option key={shelf.shelfId} value={shelf.shelfId}>{shelf.shelfLabel}</option>
+    );
+
+    function fetchBookShelves(bookcaseId: string) {
+        fetch(`http://localhost:8080/api/v1/shelves/options/${bookcaseId}`, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok " + response.statusText)
+            }
+            return response.json()
+        })
+            .then(data => {
+                console.log("Bookcase ID set to:", bookcaseId);
+                console.log("Fetched bookshelves:", data)
+                // update the bookshelf selection options with the fetched data
+                setBookshelves(data)
+                console.log("Bookshelves set to:", data)
+            })
+            .catch(error => {
+                console.error("Error fetching bookshelves:", error)
+            })
+    }   
+
 
     function fetchBookcaseLocations() {
-        fetch("http://localhost:8080/api/v1/bookcase/location", {
+        fetch("http://localhost:8080/api/v1/bookcase/locations", {
             method: "GET",
             credentials: "include",
             headers: {
@@ -91,7 +121,7 @@ function AddBookPage() {
                 console.log("Fetched bookcases:", data)
                 // update the bookcase selection options with the fetched data
                 setBookcases(data)
-
+                console.log("Bookcases set to:", data)
             })
             .catch(error => {
                 console.error("Error fetching bookcases:", error)
@@ -109,7 +139,7 @@ function AddBookPage() {
         const isbn = formData.get("isbn")
         const title = formData.get("title")
         const authors = formData.get("authors")
-
+        const shelfId = formData.get("bookshelves")
         try {
 
             const response = await fetch("http://localhost:8080/api/v1/books/addnewbook", {
@@ -121,6 +151,7 @@ function AddBookPage() {
                 },
                 body: JSON.stringify({
                     isbn,
+                    shelfId,
                     title,
                     authors: typeof authors === "string"
                         ? authors.split(",").map(a => a.trim()).filter(Boolean)
@@ -195,7 +226,7 @@ function AddBookPage() {
                             Bookcase
                         </label>
 
-                        <select name="bookcases" className="w-600 h-40 br-60 bg-grey-light">
+                        <select onChange={(e)=>{fetchBookShelves(e.target.value);}} name="bookcases" className="w-600 h-40 br-60 bg-grey-light">
                             <option value={""}>Select a bookcase</option>
                             {caseOptions}
                         </select>
@@ -212,8 +243,9 @@ function AddBookPage() {
                             Shelf
                         </label>
 
-                        <select name="bookshelves" className="w-600 h-40 br-60 bg-grey-light">
+                        <select onChange={(e)=>{console.log(e.target.value)}} name="bookshelves" className="w-600 h-40 br-60 bg-grey-light">
                             <option value={""}>Select a shelf</option>
+                            {shelfOptions}
                         </select>
 
                     </div>
