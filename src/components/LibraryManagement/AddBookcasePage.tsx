@@ -1,43 +1,37 @@
 import { Button } from "@radix-ui/themes";
 import { Nav } from "../Nav/Nav";
-import { useState } from "react";
-
 
 function AddBookcasePage() {
+	// const [location, setLocation] = useState("");
+	// const [zone, setZone] = useState("");
+	// const [bookcaseIdentifier, setBookcaseIdentifier] = useState("");
+	// const [shelfCount, setShelfCount] = useState(0);
+	// const [shelfCapacity, setShelfCapacity] = useState(0);
 
-    // const [location, setLocation] = useState("");
-    // const [zone, setZone] = useState("");
-    // const [bookcaseIdentifier, setBookcaseIdentifier] = useState("");
-    // const [shelfCount, setShelfCount] = useState(0);
-    // const [shelfCapacity, setShelfCapacity] = useState(0);
+	function handleSubmit(formData: FormData) {
+		// Here you would typically handle form submission,
+		// e.g., send the data to your backend server.
+		var location = formData.get("Location");
+		var zone = formData.get("Zone");
+		var bookcaseIdentifier = formData.get("Bookcase-Identifier");
+		var shelfCount = formData.get("shelfCount");
+		var shelfCapacity = formData.get("shelfCapacity");
 
-    function handleSubmit(formData: FormData) {
-        // Here you would typically handle form submission,
-        // e.g., send the data to your backend server.
-        var location = formData.get("Location");
-        var zone = formData.get("Zone");
-        var bookcaseIdentifier = formData.get("Bookcase-Identifier");
-        var shelfCount = formData.get("shelfCount");
-        var shelfCapacity = formData.get("shelfCapacity");
-
-        fetch("http://localhost:8080/api/v1/bookcase/create",{  
-            method: "POST",
-            credentials: "include",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                location: location,
-                zone: zone,
-                indexId: bookcaseIdentifier,
-                shelfCount: shelfCount,
-                shelfCapacity: shelfCapacity
-            }),             
-        })
-    }
-
-
-
+		fetch("http://localhost:8080/api/v1/bookcase/create", {
+			method: "POST",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				location: location,
+				zone: zone,
+				indexId: bookcaseIdentifier,
+				shelfCount: shelfCount,
+				shelfCapacity: shelfCapacity,
+			}),
+		});
+	}
 
 	return (
 		<div>
