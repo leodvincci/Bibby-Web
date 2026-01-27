@@ -35,11 +35,11 @@ function AddBookcasePage() {
                     </div>
 
                     <div className="flex-column">
-                        <label className=" txt-13 mr-10 fw-400" htmlFor="Bookcase Identifier">
+                        <label className=" txt-13 mr-10 fw-400" htmlFor="Bookcase-Identifier">
                             Bookcase Identifier
                         </label>
-                        <input type="text" id="BookcaseIdentifier" name="BookcaseIdentifier" className=" w-800 h-40 br-60 bg-grey-light" placeholder="e.g. A, B, C or 1, 2, 3 " />
-                        <p className="txt-8 blu">Use A/B/C or 1/2/3 — keep it consistent per room.</p>
+                        <input type="text" id="Bookcase-Identifier" name="Bookcase-Identifier" className=" w-800 h-40 br-60 bg-grey-light" placeholder="e.g. A, B, C or 1, 2, 3 " />
+                        <p className="txt-8 blu">Use A/B/C or 1/2/3 - keep it consistent per room.</p>
                     </div>
 
 
@@ -52,17 +52,17 @@ function AddBookcasePage() {
                     <p className="fw-500">Capacity</p>
 
                     <div>
-                        <label className="blu txt-13 mr-10 fw-400" htmlFor="Capacity">
+                        <label className="blu txt-13 mr-10 fw-400" htmlFor="shelfCount">
                             Shelf Count
                         </label>
-                        <input required type="number" id="Capacity" name="Capacity" className=" w-7 h-40 br-60 bg-grey-light mb-20" placeholder="42" />
+                        <input required type="number" id="shelfCount" name="shelfCount" className=" w-7 h-40 br-60 bg-grey-light mb-20" placeholder="42" />
                     </div>
 
                     <div>
-                        <label className="blu txt-13 mr-10 fw-400" htmlFor="Capacity">
+                        <label className="blu txt-13 mr-10 fw-400" htmlFor="shelfCapacity">
                             Shelf Capacity
                         </label>
-                        <input required type="number" id="Capacity" name="Capacity" className=" w-7 h-40 br-60 bg-grey-light mb-20" placeholder="42" />
+                        <input required type="number" id="shelfCapacity" name="shelfCapacity" className=" w-7 h-40 br-60 bg-grey-light mb-20" placeholder="42" />
                     </div>
 
                     <Button style={{ width: "800px" }} type="submit" size="3" color="cyan" variant="solid">Create Bookcase</Button>
