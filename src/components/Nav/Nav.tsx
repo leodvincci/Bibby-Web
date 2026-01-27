@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "@radix-ui/themes"
 
 function Nav() {
     return (
@@ -8,6 +9,7 @@ function Nav() {
                 <Link to="/search"><li>Search</li></Link>
                 <Link to="/books/new"><li>New Book</li></Link>
                 <Link to="/bookcases/new"><li>New Bookcase</li></Link>
+                <Button style={{marginLeft:"900px"}}>Logout</Button>
             </ul>
         </nav>
 
