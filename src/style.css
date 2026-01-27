@@ -1,11 +1,44 @@
-/* Import only the scales you need */
-
+/* =========================================================
+   Imports
+   ========================================================= */
 @import "@radix-ui/colors/sky.css";
 
+/* =========================================================
+   CSS Variables
+   ========================================================= */
+:root {
+  --bibby-book-orange-color: #d18744;
+  --bibby-ored-color: #f95738;
+  --bibby-blue-color: #5BA0B3;
+  --bibby-darkblue-color: #023047;
+  --bibby-yellow-color: #F4D35E;
+  --bibby-lightyellow-color: #FAF0CA;
+}
 
-/* Use the colors as CSS variables */
-@import "@radix-ui/colors/sky.css";
+/* =========================================================
+   Base Reset + Global Defaults
+   ========================================================= */
+* {
+  border: 0;
+  margin: 0;
+  font-family: Inter, sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
 
+html {
+  min-width: 100vw;
+  height: 100vh;
+  background-color: #FFFAFA;
+}
+
+a:visited {
+  color: inherit;
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
 .rt-Button.button {
   background-color: #112840;
   color: #ffffff;
@@ -14,53 +47,9 @@
 .rt-Button.button:hover {
   background-color: #113555;
   cursor: pointer;
-
 }
 
-
-/* =========================================================
-   CSS Variables for Theming
-   ========================================================= */
-:root{
-  --bibby-book-orange-color: #d18744;
-  --bibby-ored-color: #f95738;
-  --bibby-blue-color: #5BA0B3;
-    --bibby-darkblue-color: #023047;
-  --bibby-yellow-color: #F4D35E;
-    --bibby-lightyellow-color: #FAF0CA;
-
-
-}
-
-#span-title{
-    font-weight: 1000;
-    color: #00A2C7;
-}
-
-/* =========================================================
-     0) Base Reset + Global Defaults
-     ========================================================= */
-*{
-  border: 0;
-  margin: 0;
-  font-family: Inter, sans-serif;
-  text-decoration: none;
-}
-
-html{
-  min-width: 100vw;
-  height: 100vh;
-  background-color: #FFFAFA;
-}
-
-a:visited{
-  color: inherit;
-}
-
-/* =========================================================
-   1) Shared Utilities / Common Components
-   ========================================================= */
-.btn{
+.btn {
   text-align: center;
   width: 50px;
   font-size: 14px;
@@ -71,24 +60,27 @@ a:visited{
   border-radius: 5px;
 }
 
-.btn:hover{
+.btn:hover {
   font-weight: 500;
   cursor: pointer;
 }
 
-.btn:active{
+.btn:active {
   background-color: #011840;
 }
 
-.dark-mode{
+/* =========================================================
+   Dark Mode
+   ========================================================= */
+.dark-mode {
   background-color: #121212;
   color: #000000;
 }
 
 /* =========================================================
-   2) Navigation
+   Navigation
    ========================================================= */
-nav{
+nav {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -97,33 +89,33 @@ nav{
   color: #011840;
   width: auto;
   height: 115px;
-  /*background-color: #fafafa;*/
   background-color: #FBFBFB;
-
   padding: 0 40px;
 }
 
-.bibby-mark{
+.bibby-mark {
   width: 40px;
 }
 
-#bibby-logo{
+#bibby-logo {
   font-size: 32px;
   letter-spacing: 2px;
   font-weight: 700;
   padding-left: 3px;
   padding-right: 10px;
-}
-
-#bibby-logo{
   color: var(--bibby-blue-color);
 }
 
-.tag-name{
+#span-title {
+  font-weight: 1000;
+  color: #00A2C7;
+}
+
+.tag-name {
   font-size: 13px;
 }
 
-#nav-items{
+#nav-items {
   flex: 1;
   width: auto;
   font-size: 15px;
@@ -136,34 +128,42 @@ nav{
   padding-right: 255px;
 }
 
-#nav-items > li:hover{
+#nav-items > li:hover {
   color: #EE964B;
   cursor: pointer;
 }
 
-#nav-items > li:active{
+#nav-items > li:active {
   color: #121212;
 }
 
-#sign-in-btn{
-  /* Intentionally empty for now */
-  background-color: #0D3B66
+#sign-in-btn {
+  background-color: #0D3B66;
+}
 
+#book-stack-icon {
+  position: relative;
+  top: 4px;
+  width: 33px;
+  margin-left: 1px;
+}
+
+.orange-hover {
+  color: var(--bibby-book-orange-color);
 }
 
 /* =========================================================
-   3) Search Page Layout + Titles
+   Search Page Layout
    ========================================================= */
-.search-page{
+.search-page {
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #ffffff;
-
   width: auto;
 }
 
-.page-title{
+.page-title {
   color: #0D3B66;
   font-weight: 900;
   letter-spacing: 1px;
@@ -171,7 +171,7 @@ nav{
   margin-top: 110px;
 }
 
-.page-subtitle{
+.page-subtitle {
   color: #023047;
   font-size: 16px;
   font-weight: 350;
@@ -180,20 +180,19 @@ nav{
 }
 
 /* =========================================================
-   4) Search Form (Input + Icon + Radio Options)
+   Search Form
    ========================================================= */
-.search-container{
+.search-container {
   width: auto;
 }
 
-.search-input-container{
+.search-input-container {
   display: flex;
-    justify-content: center;
-    align-items: center;
-  /*border: 1px solid crimson;*/
+  justify-content: center;
+  align-items: center;
 }
 
-.search-form{
+.search-form {
   height: auto;
   display: flex;
   justify-content: center;
@@ -201,7 +200,7 @@ nav{
   flex-direction: column;
 }
 
-#search-input{
+#search-input {
   color: #EE964B;
   text-align: left;
   font-size: 18px;
@@ -212,22 +211,21 @@ nav{
   height: 60px;
   border-radius: 30px;
   border: 1px solid rgba(78, 78, 78, 0.09);
-  box-shadow: 0 2px 10px rgba(13,59,102,0.06);
-
+  box-shadow: 0 2px 10px rgba(13, 59, 102, 0.06);
 }
 
-#search-input::placeholder{
+#search-input::placeholder {
   font-size: 16px;
   color: rgba(73, 73, 73, 0.55);
 }
 
-#search-input:focus{
+#search-input:focus {
   outline-color: whitesmoke;
   border: 1px solid #EE964B;
-  box-shadow: 0 0 0 4px rgba(238,150,75,0.18);
+  box-shadow: 0 0 0 4px rgba(238, 150, 75, 0.18);
 }
 
-.book-search-icon{
+.book-search-icon {
   bottom: 7px;
   width: 23px;
   position: relative;
@@ -235,17 +233,17 @@ nav{
   opacity: 80%;
 }
 
-.book-search-icon:hover{
+.book-search-icon:hover {
   opacity: 95%;
   cursor: pointer;
 }
 
-.book-search-icon:active{
+.book-search-icon:active {
   opacity: 85%;
   width: 24px;
 }
 
-.search-bar-divider{
+.search-bar-divider {
   position: relative;
   right: 85px;
   border-left: 2px solid rgba(207, 207, 207, 0.31);
@@ -253,7 +251,7 @@ nav{
   margin-top: 10px;
 }
 
-.search-by-radio-options{
+.search-by-radio-options {
   margin-top: 20px;
   display: flex;
   width: 60%;
@@ -261,14 +259,14 @@ nav{
   align-items: center;
 }
 
-.search-option-radio{
+.search-option-radio {
   accent-color: #023047;
   text-align: center;
   padding: 10px 0;
   border-radius: 10px;
 }
 
-.search-by-label{
+.search-by-label {
   font-size: 12px;
   font-weight: 625;
   margin-left: 10px;
@@ -276,16 +274,76 @@ nav{
 }
 
 /* =========================================================
-   5) Results Container
+   Search Controls (Segmented)
    ========================================================= */
-.results-title{
+.search-controls {
+  width: min(720px, 92vw);
+  margin: 12px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.segmented {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgba(13, 59, 102, 0.10);
+}
+
+.seg {
+  all: unset;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seg:hover {
+  background: rgba(229, 138, 62, 0.05);
+}
+
+.segLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(13, 59, 102, 0.85);
+  user-select: none;
+}
+
+.seg[data-state="checked"] {
+  background: #ffffff;
+  border: 1px solid rgba(13, 59, 102, 0.14);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+.seg[data-state="checked"] .segLabel {
+  font-weight: 800;
+  color: #0D3B66;
+}
+
+.seg:focus-visible {
+  outline: 3px solid rgba(244, 211, 94, 0.55);
+  outline-offset: 2px;
+}
+
+.seg:active {
+  transform: scale(0.985);
+}
+
+/* =========================================================
+   Results Container
+   ========================================================= */
+.results-title {
   width: 90%;
   font-weight: 500;
   color: rgba(1, 24, 64, 0.75);
   font-size: 18px;
 }
 
-.search-result-container{
+.search-result-container {
   box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
   background-color: #fafafa;
   border-radius: 15px;
@@ -295,7 +353,7 @@ nav{
   width: 90%;
 }
 
-.search-result-container > hr{
+.search-result-container > hr {
   margin: 30px auto;
   background-color: rgba(124, 151, 186, 0.1);
   width: 100%;
@@ -303,166 +361,84 @@ nav{
 }
 
 /* =========================================================
-   6) Results Table
+   Results Table
    ========================================================= */
-#myTable{
+#myTable {
   width: 100%;
   height: auto;
 }
 
-.header-row{
+.header-row {
   text-align: left;
   color: #305066;
   height: auto;
   width: 100%;
 }
 
-.table-row{
+.table-row {
   height: auto;
   width: 100%;
   font-weight: 300;
 }
 
-.table-row td{
+.table-row td {
   padding: 15px 0;
   font-size: 18px;
   font-weight: 400;
   color: rgba(0, 24, 56, 0.87);
 }
 
-.col-1{
+.col-1 {
   width: 100px;
   text-align: center;
 }
 
-tbody:nth-child(even){
+tbody:nth-child(even) {
   background-color: rgba(179, 179, 179, 0.05);
 }
 
 /* =========================================================
-   7) Icons (Table Actions)
+   Icons (Table Actions)
    ========================================================= */
-.view-book-icon{
-
+.view-book-icon {
   color: #EE964B;
   width: 24px;
 }
 
-.view-book-icon:hover{
+.view-book-icon:hover {
   cursor: pointer;
   opacity: 85%;
   color: #df9729;
 }
 
-.view-book-icon:active{
+.view-book-icon:active {
   opacity: 65%;
   color: #ac6f3c;
   width: 22px;
 }
 
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 
 /* =========================================================
-   8) Archived / Notes
+   Authentication Pages (Registration/Login)
    ========================================================= */
-/*#bibby-logo::first-letter{
-  margin-left: 30px;
-  font-weight: 800;
-  font-size: 64px;
-  color:#00296B;
-}*/
-
-#book-stack-icon{
-  position: relative;
-  top: 4px;
-  width: 33px;
-  margin-left: 1px;
+#registration-page {
+  height: 100vh;
+  width: 100vw;
 }
 
-.orange-hover{
-    color: var(--bibby-book-orange-color);
-}
-
-
-/* Wrapper: keeps it aligned with the search bar width */
-.search-controls{
-  width: min(720px, 92vw);
-  margin: 12px auto 0;
-  display: flex;
-  justify-content: center;
-}
-
-/* Container pill */
-.segmented{
-  display: inline-flex;
-  gap: 6px;
-  padding: 6px;
-  border-radius: 999px;
-
-  /* warm paper tint + subtle navy hairline */
-  background: rgb(255, 255, 255);
-  border: 1px solid rgba(13, 59, 102, 0.10);
-}
-
-/* Each segment button */
-.seg{
-  all: unset; /* removes default button styles */
-  cursor: pointer;
-  border-radius: 999px;
-  padding: 8px 14px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.seg:hover{
-  background: rgba(229, 138, 62, 0.05);
-}
-
-.segLabel{
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(13, 59, 102, 0.85);
-  user-select: none;
-}
-
-/* Selected state (Radix sets data-state="checked") */
-.seg[data-state="checked"]{
-  background: #ffffff;
-  border: 1px solid rgba(13, 59, 102, 0.14);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-}
-
-.seg[data-state="checked"] .segLabel{
-  font-weight: 800;
-  color: #0D3B66;
-}
-
-/* Keyboard focus (Radix uses :focus-visible nicely) */
-.seg:focus-visible{
-  outline: 3px solid rgba(244, 211, 94, 0.55); /* maize highlight */
-  outline-offset: 2px;
-}
-
-/* Optional: tiny press feedback */
-.seg:active{
-  transform: scale(0.985);
-}
-
-
-.reg-background{
+.reg-background {
   width: 100vw;
   height: 100vh;
-
   background-image: url("../public/bookBackgroundSignUp.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
 }
 
-.login-background{
+.login-background {
   width: 100vw;
   height: 100vh;
   background-image: url("../public/bookBackgroundLogin2.png");
@@ -470,89 +446,113 @@ tbody:nth-child(even){
   background-position: right;
 }
 
-#registration-page{
-    height: 100vh;
-    width: 100vw;
-}
-
-
-
-.registration-container{
+.registration-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
- 
-    background-color: #F2EFE8;
-    width: 900px;
-    max-width: 50vw;
-    height: 100vh;
-    border-radius: 0px 80px 0px 0px;
-    box-shadow: 1px 10px 88px 1px rgba(0, 0, 0, 0.031);
+  background-color: #F2EFE8;
+  width: 900px;
+  max-width: 50vw;
+  height: 100vh;
+  border-radius: 0px 80px 0px 0px;
+  box-shadow: 1px 10px 88px 1px rgba(0, 0, 0, 0.031);
 }
 
-.login-container{
+.login-container {
   display: flex;
-    padding-left: 100px;
-    background-color: #FBF6F4;
- width: 720px;
+  padding-left: 100px;
+  background-color: #FBF6F4;
+  width: 720px;
   max-width: 80vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 1px 1px 18px 1px rgba(0, 0, 0, 0.06);
 }
 
-.bibby-logo{
-    position: absolute;
-    width: 360px;
-    top: 50px;
-    left: 105px;
+.bibby-logo {
+  position: absolute;
+  width: 360px;
+  top: 50px;
+  left: 105px;
 }
 
-@media (min-width: 1950px){
-  .registration-container{
-    width: 1220px;
-    max-width: 38vw;
-    padding-left: 20px;
-  }
-
-  .bibby-logo{
-    width: 360px;
-    top: 60px;
-    left: 250px;
-  }
+.registration-section {
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(13, 59, 102, 0.06);
+  background-color: #f0f0f087;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 50px;
+  width: 500px;
+  margin-top: 90px;
 }
 
-@media (min-width: 1950px){
-  .login-container{
-    width: 940px;
-    max-width: 33vw;
-    padding-left: 300px;
-    
-  }
-
-  .bibby-logo{
-    width: 360px;
-    top: 60px;
-    left: 250px;
-  }
+.registration-buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 15px;
 }
 
+.registration-header-text {
+  position: absolute;
+  top: 220px;
+  color: #418a9e;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+  left: 110px;
+}
 
+.call-to-action {
+  width: auto;
+  font-weight: 800;
+  font-size: 24px;
+  color: #4b8a9c;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
 
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  color: #5EA4B8;
+  margin-bottom: 25px;
+}
 
-.call-to-action{
-    width: auto;
-    font-weight: 800;
-    font-size: 24px;
-    color: #4b8a9c;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
+.forgot-password {
+  font-size: 14px;
+  color: #418a9e;
+  font-weight: 500;
+  margin-top: 1px;
+  cursor: pointer;
+}
 
-  .gsi-material-button {
+.have-an-account {
+  position: absolute;
+  bottom: 60px;
+  color: #418a9e;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.or-text {
+  text-align: center;
+  color: #7a7a7a;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+/* =========================================================
+   Google Sign-In Button
+   ========================================================= */
+.gsi-material-button {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -560,9 +560,7 @@ tbody:nth-child(even){
   background-color: WHITE;
   background-image: none;
   border: 1px solid #747775;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: #1f1f1f;
   cursor: pointer;
@@ -575,7 +573,6 @@ tbody:nth-child(even){
   padding: 0 12px;
   position: relative;
   text-align: center;
-  -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
   transition: background-color .218s, border-color .218s, box-shadow .218s;
   vertical-align: middle;
   white-space: nowrap;
@@ -592,12 +589,9 @@ tbody:nth-child(even){
 }
 
 .gsi-material-button .gsi-material-button-content-wrapper {
-  -webkit-align-items: center;
   align-items: center;
   display: flex;
-  -webkit-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: nowrap;
   flex-wrap: nowrap;
   height: 100%;
   justify-content: space-between;
@@ -606,7 +600,6 @@ tbody:nth-child(even){
 }
 
 .gsi-material-button .gsi-material-button-contents {
-  -webkit-flex-grow: 1;
   flex-grow: 1;
   font-family: 'Roboto', arial, sans-serif;
   font-weight: 500;
@@ -616,7 +609,6 @@ tbody:nth-child(even){
 }
 
 .gsi-material-button .gsi-material-button-state {
-  -webkit-transition: opacity .218s;
   transition: opacity .218s;
   bottom: 0;
   left: 0;
@@ -632,22 +624,18 @@ tbody:nth-child(even){
   border-color: #1f1f1f1f;
 }
 
-.gsi-material-button:disabled .gsi-material-button-contents {
-  opacity: 38%;
-}
-
+.gsi-material-button:disabled .gsi-material-button-contents,
 .gsi-material-button:disabled .gsi-material-button-icon {
   opacity: 38%;
 }
 
-.gsi-material-button:not(:disabled):active .gsi-material-button-state, 
+.gsi-material-button:not(:disabled):active .gsi-material-button-state,
 .gsi-material-button:not(:disabled):focus .gsi-material-button-state {
   background-color: #303030;
   opacity: 12%;
 }
 
 .gsi-material-button:not(:disabled):hover {
-  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
 }
 
@@ -656,308 +644,356 @@ tbody:nth-child(even){
   opacity: 8%;
 }
 
-.registration-buttons{
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 15px;
+/* =========================================================
+   Add Book Form
+   ========================================================= */
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.subtitle{
-    font-size: 18px;
-    font-weight: 400;
-    color: #5EA4B8;
-    margin-bottom: 25px;}
-
-.registration-section{
-    border-radius: 30px;
-
-    box-shadow: 0 2px 10px rgba(13,59,102,0.06);
-    background-color: #f0f0f087;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 45px 50px;
-    width: 500px;
-    margin-top: 90px;
-
+.add-book-form > label {
+  color: #4b8a9c;
+  font-weight: 300;
+  font-size: 13px;
 }
 
-.forgot-password{
-    font-size: 14px;
-    color: #418a9e;
-    font-weight: 500;
-    margin-top: 1px;
-    cursor: pointer;
-}
-
-.registration-header-text{
-    position: absolute;
-    top: 220px;
-    color: #418a9e;
-    font-weight: 300;
-    font-size: 20px;
-    text-align: center; 
-    left: 110px;
-  }
-
-  .have-an-account{
-    position: absolute;
-    bottom: 60px;
-    color: #418a9e;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center; 
-
-  }
-
-  .or-text{
-    text-align: center;
-    color: #7a7a7a;
-    font-size: 14px;
-    margin: 15px 0;
-  }
-
-  .add-book-form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  .add-book-form > label > input{
-    color: #4b8a9c;
-    height: 45px;
-    width: 750px;
-    padding: 0 15px;
-    font-size: 16px;
-    border: 1px solid rgba(78, 78, 78, 0.09);
-    border-radius: 8px;
-  }
-
-    .add-book-form > label{
-    color: #4b8a9c;
-    font-weight: 300;
-    font-size: 13px;
-  }
-
-
-  .color-blu{
-    color: #4b8a9c;
-    font-weight: 300;
-  }
-
-  .add-book-form > label > input::placeholder{
-    color: rgba(73, 73, 73, 0.55);
-    font-size: 14px;
-  }
-
-  .border{
-    border: 1px solid #d18744;
-    border-radius: 12px;
-  }
-
-  .w-50{
-    width: 50vw;
-  }
-  
-  .align-center{
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .ml-30{
-    margin-left: 30px;
-  }
-
-  .ml-10{
-    margin-left: 10px;
-  }
-
-  .ml-15{
-    margin-left: 15px;
-  }
-
-  .w-65{
-    width: 840px;
-  }
-
-  .w-75{
-    width: 75vw;
-  }
-  
-  .minw-565{
-    min-width: 565px;
-  }
-
-  .minw-1300{
-    min-width: 1075px;
-  }
-  .maxw-30{
-    max-width: 10vw;
-  }
-
-    .maxw-50{
-    max-width: 50vw;
-  }
-
-  /* .maxw-80{
-    max-width: 80vw;
-  } */
-
-  .w-100{
-    max-width:100vw;
-  }
-
-  .w-600{
-    width: 250px;
-  }
-  
-  .h-40{
-    height: 40px;
-  }
-
-  .flex{
-    display: flex;
-  }
-
-  .flex-grow-1{
-    flex-grow: 10;
-  }
-  
-  .add-book-input-border{
-    border: 1px solid rgba(78, 78, 78, 0.09);
-    border-radius: 8px;
-    height: 45px;
-    
-    padding: 0 15px;
-    margin-right: 25px;
-    font-size: 16px;
-    color: #4b8a9c;
-  }
-
-  .justify-center{
-    justify-content: center;
-  }
-
-  .placeholder-color-blu::placeholder{
-    font-size: small;
-    opacity: 75%;
-  }
-
-  .justify-space{
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
-
-
-
-  .txt-14{
-    font-size: 14px;
-  }
-
-  .txt-13{
-    font-size: 13px;
-  }
-
-  .txt-12{
-    font-size: 12px;
-  }
-
-  .txt-smallest{
-    font-size: 10px;
-    color: rgba(73, 73, 73, 0.55);
-    margin-top: -10px;
-    margin-bottom: 10px;
-  }
-
-  .ml-25{
-    margin-left: 25px;
-  }
-
-  .ml-60{
-    margin-left: 60px;
-  }
-
-  .mr-138{
-    margin-right: 138px;
-  }
-
-  .mr-60{
-    margin-right: 60px;
-  }  
-
-  .mr-80{
-    margin-right: 80px;
-  }
-
-  .mr-100{
-    margin-right: 100px;
-  }
-
-    .mr-125{
-    margin-right: 125px;
-  }
-
-  .mr-10{
-    margin-right: 10px;
-  }
-
-  .mt-120{
-    margin-top: 120px;
-  }
-
-
-  .blu{
-    color: #4b8a9c;
-  }
-
-  .fw-500{
-    font-weight: 500;
-  }
-
-  .fw-300{
-    font-weight: 300;
-  }
-
-
-  .red{
-    color: crimson;
-  }
-
-  .location-selection{
-    display: flex;
-
-  }
-
-
-.br-60{  
+.add-book-form > label > input {
+  color: #4b8a9c;
+  height: 45px;
+  width: 750px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: 1px solid rgba(78, 78, 78, 0.09);
   border-radius: 8px;
 }
 
-.transparent-bg{
-  background-color: transparent;
+.add-book-form > label > input::placeholder {
+  color: rgba(73, 73, 73, 0.55);
+  font-size: 14px;
 }
 
-.white-bg{
-  background-color: white;
+.add-book-input-border {
+  border: 1px solid rgba(78, 78, 78, 0.09);
+  border-radius: 8px;
+  height: 45px;
+  padding: 0 15px;
+  margin-right: 25px;
+  font-size: 16px;
+  color: #4b8a9c;
 }
 
-.opacity-75{
+.location-selection {
+  display: flex;
+}
+
+/* =========================================================
+   Utility Classes - Display
+   ========================================================= */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow-1 {
+  flex-grow: 10;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-itms-ctr {
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+/* =========================================================
+   Utility Classes - Sizing
+   ========================================================= */
+.w-5 {
+  width: 5vw;
+}
+
+.w-7 {
+  width: 7vw;
+}
+
+.w-50 {
+  width: 50vw;
+}
+
+.w-65 {
+  width: 840px;
+}
+
+.w-75 {
+  width: 75vw;
+}
+
+.w-100 {
+  max-width: 100vw;
+}
+
+.w-500 {
+  width: 500px;
+}
+
+.w-600 {
+  width: 250px;
+}
+
+.w-800 {
+  width: 800px;
+}
+
+.maxw-850 {
+  max-width: 850px;
+}
+
+.minw-565 {
+  min-width: 565px;
+}
+
+.minw-1300 {
+  min-width: 1075px;
+}
+
+.maxw-30 {
+  max-width: 10vw;
+}
+
+.maxw-50 {
+  max-width: 50vw;
+}
+
+.h-40 {
+  height: 40px;
+}
+
+/* =========================================================
+   Utility Classes - Spacing
+   ========================================================= */
+.mp-0 {
+  margin: 0;
+  padding: 0;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.ml-25 {
+  margin-left: 25px;
+}
+
+.ml-25p {
+  margin-left: 550px;
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
+
+.ml-60 {
+  margin-left: 60px;
+}
+
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-60 {
+  margin-right: 60px;
+}
+
+.mr-80 {
+  margin-right: 80px;
+}
+
+.mr-100 {
+  margin-right: 100px;
+}
+
+.mr-125 {
+  margin-right: 125px;
+}
+
+.mr-300 {
+  margin-right: 300px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-30{
+  margin-top: 30px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-120 {
+  margin-top: 120px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.gap-25 {
+  gap: 25px;
+}
+
+/* =========================================================
+   Utility Classes - Typography
+   ========================================================= */
+.txt-8 {
+  font-size: 8px;
+}
+
+.txt-10 {
+  font-size: 10px;
+}
+
+.txt-12 {
+  font-size: 12px;
+}
+
+.txt-13 {
+  font-size: 13px;
+}
+
+.txt-14 {
+  font-size: 14px;
+}
+
+.txt-smallest {
+  font-size: 10px;
+  color: rgba(73, 73, 73, 0.55);
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+/* =========================================================
+   Utility Classes - Colors
+   ========================================================= */
+.blu {
+  color: #4b8a9c;
+}
+
+.color-blu {
+  color: #4b8a9c;
+  font-weight: 300;
+}
+
+.red {
+  color: crimson;
+}
+
+.placeholder-color-blu::placeholder {
+  font-size: small;
   opacity: 75%;
 }
 
-.opacity-90{
-  opacity: 90%;
+/* =========================================================
+   Utility Classes - Backgrounds & Effects
+   ========================================================= */
+.transparent-bg {
+  background-color: transparent;
 }
 
-.opacity-50{
+.white-bg {
+  background-color: white;
+}
+
+.bg-grey-light {
+  background-color: #f8f8f8;
+}
+
+.opacity-50 {
   opacity: 50%;
 }
 
-.bg-grey-light{
-  background-color: #f8f8f8;
+.opacity-75 {
+  opacity: 75%;
+}
+
+.opacity-90 {
+  opacity: 90%;
+}
+
+.border {
+  border: 1px solid #d18744;
+  border-radius: 12px;
+}
+
+.br-60 {
+  border-radius: 8px;
+}
+
+.box {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   Media Queries
+   ========================================================= */
+@media (min-width: 1950px) {
+  .registration-container {
+    width: 1220px;
+    max-width: 38vw;
+    padding-left: 20px;
+  }
+
+  .login-container {
+    width: 940px;
+    max-width: 33vw;
+    padding-left: 300px;
+  }
+
+  .bibby-logo {
+    width: 360px;
+    top: 60px;
+    left: 250px;
+  }
 }

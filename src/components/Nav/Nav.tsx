@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-function Nav(){
-    return(
-            <nav>
+function Nav() {
+    return (
+        <nav>
             <Link to="/" id={"bibby-logo"}>Bibby</Link>
             <ul id={"nav-items"}>
-                <li> <Link to="/search"> Search </Link></li>
-            <Link to={"/addNewBook"}> <li>Add Book</li> </Link>
-                <li>Book Cart</li>
+                <Link to="/search"><li>Search</li></Link>
+                <Link to="/books/new"><li>New Book</li></Link>
+                <Link to="/bookcases/new"><li>New Bookcase</li></Link>
             </ul>
         </nav>
 
@@ -15,7 +15,7 @@ function Nav(){
 
 
 
-            )
+    )
 }
 
-export {Nav}
+export { Nav }
