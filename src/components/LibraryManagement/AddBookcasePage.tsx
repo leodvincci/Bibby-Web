@@ -48,7 +48,7 @@ function AddBookcasePage() {
 
                 </section>
 
-                <section id="capacity-section" className="flex-column  p-20 gap-10 w-50p mt-50">
+                <section id="capacity-section" className=" flex-column p-20 gap-10 maxw-850 mt-30 align-center">
                     <p className="fw-500">Capacity</p>
 
                     <div>

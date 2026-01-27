@@ -767,6 +767,10 @@ tbody:nth-child(even) {
   width: 800px;
 }
 
+.maxw-850 {
+  max-width: 850px;
+}
+
 .minw-565 {
   min-width: 565px;
 }
@@ -823,6 +827,7 @@ tbody:nth-child(even) {
   margin-left: 60px;
 }
 
+
 .mr-10 {
   margin-right: 10px;
 }
@@ -849,6 +854,10 @@ tbody:nth-child(even) {
 
 .mt-25 {
   margin-top: 25px;
+}
+
+.mt-30{
+  margin-top: 30px;
 }
 
 .mt-50 {
