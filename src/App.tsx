@@ -7,6 +7,7 @@ import { AddBookPage } from "./components/LibraryManagement/AddBookPage.tsx";
 import { LoginPage } from "./components/Login/LoginPage.tsx";
 import { RegistrationPage } from "./components/Registration/RegistrationPage.tsx";
 import { SearchPage } from "./components/Search/SearchPage.tsx";
+import { ViewBookcasesPage } from "./components/LibraryManagement/ViewBookcasesPage.tsx";
 
 const container = document.getElementById("app");
 if (!container) throw new Error("Root element with id `app` not found");
@@ -21,6 +22,7 @@ createRoot(container).render(
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/books/new" element={<AddBookPage />} />
 				<Route path="/bookcases/new" element={<AddBookcasePage />} />
+				<Route path="/bookcases/view" element={<ViewBookcasesPage />} />
 			</Routes>
 		</BrowserRouter>
 	</Theme>,

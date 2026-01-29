@@ -17,6 +17,10 @@ function Nav() {
 				<Link to="/bookcases/new">
 					<li>New Bookcase</li>
 				</Link>
+
+				<Link to="/bookcases/view">
+					<li>View Bookcases</li>
+				</Link>
 				<Button style={{ marginLeft: "900px" }}>Logout</Button>
 			</ul>
 		</nav>
