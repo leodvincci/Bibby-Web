@@ -748,6 +748,10 @@ tbody:nth-child(even) {
 	width: 50vw;
 }
 
+.w-450p {
+	width: 450px;
+}
+
 .w-65 {
 	width: 840px;
 }
@@ -796,6 +800,10 @@ tbody:nth-child(even) {
 	height: 40px;
 }
 
+.h-350p{
+	height: 230px;
+}
+
 /* =========================================================
    Utility Classes - Spacing
    ========================================================= */
@@ -806,6 +814,10 @@ tbody:nth-child(even) {
 
 .p-20 {
 	padding: 20px;
+}
+
+.p-4{
+	padding: 4px;
 }
 
 .ml-10 {
@@ -874,6 +886,14 @@ tbody:nth-child(even) {
 
 .mb-20 {
 	margin-bottom: 20px;
+}
+
+.m-2{
+	margin: 2px;
+}
+
+.m-5{
+	margin: 5px;
 }
 
 .gap-25 {
