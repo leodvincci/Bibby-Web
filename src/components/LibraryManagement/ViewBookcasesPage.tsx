@@ -55,6 +55,7 @@ function ViewBookcasesPage() {
           
                     {bookcases.map((bookcase) => (
                         <BookcaseCard
+                            key = {bookcase.bookcaseId}
                             location={bookcase?.location}
                             zone={bookcase?.bookcaseLabel.split(":")[0]}
                             identifier={bookcase?.bookcaseLabel.split(":")[1]}
