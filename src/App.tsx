@@ -4,10 +4,10 @@ import { Theme } from "@radix-ui/themes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AddBookcasePage } from "./components/LibraryManagement/AddBookcasePage.tsx";
 import { AddBookPage } from "./components/LibraryManagement/AddBookPage.tsx";
+import { ViewBookcasesPage } from "./components/LibraryManagement/ViewBookcasesPage.tsx";
 import { LoginPage } from "./components/Login/LoginPage.tsx";
 import { RegistrationPage } from "./components/Registration/RegistrationPage.tsx";
 import { SearchPage } from "./components/Search/SearchPage.tsx";
-import { ViewBookcasesPage } from "./components/LibraryManagement/ViewBookcasesPage.tsx";
 
 const container = document.getElementById("app");
 if (!container) throw new Error("Root element with id `app` not found");

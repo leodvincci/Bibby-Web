@@ -748,8 +748,8 @@ tbody:nth-child(even) {
 	width: 50vw;
 }
 
-.w-450p {
-	width: 450px;
+.w-500px {
+	width: 500px;
 }
 
 .w-65 {
@@ -800,8 +800,16 @@ tbody:nth-child(even) {
 	height: 40px;
 }
 
-.h-350p{
-	height: 230px;
+.h-275px {
+	height: 275px;
+}
+
+.mt-10{
+	margin-top: 10px;
+}
+
+.p-20{
+	padding: 20px;
 }
 
 /* =========================================================
@@ -816,7 +824,7 @@ tbody:nth-child(even) {
 	padding: 20px;
 }
 
-.p-4{
+.p-4 {
 	padding: 4px;
 }
 
@@ -888,12 +896,16 @@ tbody:nth-child(even) {
 	margin-bottom: 20px;
 }
 
-.m-2{
+.m-2 {
 	margin: 2px;
 }
 
-.m-5{
+.m-5 {
 	margin: 5px;
+}
+
+.gap-5 {
+	gap: 5px;
 }
 
 .gap-25 {
@@ -921,6 +933,10 @@ tbody:nth-child(even) {
 
 .txt-14 {
 	font-size: 14px;
+}
+
+.txt-18 {
+	font-size: 18px;
 }
 
 .txt-smallest {
@@ -991,6 +1007,20 @@ tbody:nth-child(even) {
 	border-radius: 12px;
 }
 
+.mb-10 {
+	margin-bottom: 10px;
+}
+
+
+.fw-600{
+	font-weight: 600;
+}
+
+.border-gray-300{
+		border: 2px solid #d1d5db;
+		border-radius: 12px;
+}
+
 .br-60 {
 	border-radius: 8px;
 }
@@ -1020,4 +1050,9 @@ tbody:nth-child(even) {
 		top: 60px;
 		left: 250px;
 	}
+
+
+
+
+
 }
