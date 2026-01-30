@@ -748,8 +748,21 @@ tbody:nth-child(even) {
 	width: 50vw;
 }
 
-.w-500px {
-	width: 500px;
+.w-475px {
+	width: 475px;
+}
+
+.hover:hover {
+	transition: box-shadow 0.3s ease-in-out;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.onclick:active {
+	transform: scale(0.98);
+}
+
+.cursor-pointer{
+	cursor: pointer;
 }
 
 .w-65 {
@@ -800,8 +813,36 @@ tbody:nth-child(even) {
 	height: 40px;
 }
 
+.ml-175px{
+	margin-left: 175px;
+}
+
+.ml-10px{
+	margin-left: 10px;
+}
+
+.fw{
+	flex-wrap: wrap;
+}
+
+.mb-50{
+	margin-bottom: 50px;
+}
+
+.justify-between{
+	justify-content: space-between;
+}
+
+.mr-175{
+	margin-right: 175px;
+}
+
 .h-275px {
 	height: 275px;
+}
+
+.h-100vh {
+	height: 100vh;
 }
 
 .mt-10{

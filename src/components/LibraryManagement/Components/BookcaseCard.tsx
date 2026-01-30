@@ -2,7 +2,7 @@ import { ProgressCard } from "./Progress";
 
 function BookcaseCard() {
     return (
-        <div className="border-gray-300 bookcase-card w-500px h-275px m-5 p-20 ">
+        <div className="border-gray-300 bookcase-card w-475px h-275px m-5 p-20 hover onclick cursor-pointer">
             <h2>Basement</h2>
             <section className="flex txt-18 gap-5 mb-10">
                 <p>Northwall</p>

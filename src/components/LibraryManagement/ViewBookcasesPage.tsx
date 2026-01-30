@@ -4,29 +4,29 @@ import { BookcaseCard } from "./Components//BookcaseCard";
 
 function ViewBookcasesPage() {
     return (
-        <div>
+        <div >
             <Nav />
-            <section className="">
+            <section className=" ml-175px mr-175">
 
-                <div className="flex">
+                <div className="flex align-itms-ctr  p-20 mb-50">
                     <div>
                         <h1 className="blu">Bookcases</h1>
                         <p>Pick a bookcase to see what's on each shelf.</p>
                     </div>
 
                     <div>
-                        <Button color="cyan">+ New bookcase</Button>
+                        <Button style={{marginLeft:"50px"}} color="cyan">+ New bookcase</Button>
 
                     </div>
 
                 </div>
 
 
-                <section className="flex gap-25" id="bookcasecard-section">
+                <section className="flex fw p-20 gap-25" id="bookcasecard-section">
                     <BookcaseCard />
-                    {/* <BookcaseCard />
                     <BookcaseCard />
-                    <BookcaseCard /> */}
+                    <BookcaseCard />
+                    <BookcaseCard />
 
 
                 </section>
