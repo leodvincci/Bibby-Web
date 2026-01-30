@@ -1,6 +1,7 @@
 import { Button } from "@radix-ui/themes";
 import { Nav } from "../Nav/Nav";
 import { BookcaseCard } from "./Components//BookcaseCard";
+import { Link } from "react-router";
 
 function ViewBookcasesPage() {
     return (
@@ -15,7 +16,9 @@ function ViewBookcasesPage() {
                     </div>
 
                     <div>
-                        <Button style={{marginLeft:"50px"}} color="cyan">+ New bookcase</Button>
+                        <Link to="/bookcases/new">
+                            <Button style={{ marginLeft: "50px" }} color="cyan">+ New bookcase</Button>
+                        </Link>
 
                     </div>
 

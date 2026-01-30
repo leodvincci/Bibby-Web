@@ -14,12 +14,12 @@ function Nav() {
 				<Link to="/books/new">
 					<li>New Book</li>
 				</Link>
-				<Link to="/bookcases/new">
+				{/* <Link to="/bookcases/new">
 					<li>New Bookcase</li>
-				</Link>
+				</Link> */}
 
 				<Link to="/bookcases/view">
-					<li>View Bookcases</li>
+					<li>Bookcases</li>
 				</Link>
 				<Button style={{ marginLeft: "900px" }}>Logout</Button>
 			</ul>
