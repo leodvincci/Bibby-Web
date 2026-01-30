@@ -188,9 +188,9 @@ function AddBookPage() {
 				className="  add-book-form w-65 align-center mt-120 "
 			>
 				<section className="flex ">
-					<p className="blu fw-400 ml-60 mr-138">
+					<h1 className="blu  ml-60 mr-138 mb-10">
 						Add a new book to your library
-					</p>
+					</h1>
 					{/*Scan Feature not implemented yet <Button style={{width: "100px", marginRight: "5px", borderRadius: "7px"}} color="cyan" variant="surface">Scan</Button> */}
 					{/* <Button style={{width: "100px", borderRadius: "7px"}} color="cyan" variant="surface">Manual</Button> */}
 				</section>

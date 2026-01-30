@@ -4,6 +4,7 @@ import { Theme } from "@radix-ui/themes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AddBookcasePage } from "./components/LibraryManagement/AddBookcasePage.tsx";
 import { AddBookPage } from "./components/LibraryManagement/AddBookPage.tsx";
+import { ViewBookcasesPage } from "./components/LibraryManagement/ViewBookcasesPage.tsx";
 import { LoginPage } from "./components/Login/LoginPage.tsx";
 import { RegistrationPage } from "./components/Registration/RegistrationPage.tsx";
 import { SearchPage } from "./components/Search/SearchPage.tsx";
@@ -21,6 +22,7 @@ createRoot(container).render(
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/books/new" element={<AddBookPage />} />
 				<Route path="/bookcases/new" element={<AddBookcasePage />} />
+				<Route path="/bookcases/view" element={<ViewBookcasesPage />} />
 			</Routes>
 		</BrowserRouter>
 	</Theme>,

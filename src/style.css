@@ -748,6 +748,27 @@ tbody:nth-child(even) {
 	width: 50vw;
 }
 
+.w-475px {
+	width: 475px;
+}
+
+.txt-24{
+	font-size: 24px;
+}
+
+.hover:hover {
+	transition: box-shadow 0.3s ease-in-out;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.onclick:active {
+	transform: scale(0.98);
+}
+
+.cursor-pointer{
+	cursor: pointer;
+}
+
 .w-65 {
 	width: 840px;
 }
@@ -796,6 +817,46 @@ tbody:nth-child(even) {
 	height: 40px;
 }
 
+.ml-175px{
+	margin-left: 175px;
+}
+
+.ml-10px{
+	margin-left: 10px;
+}
+
+.fw{
+	flex-wrap: wrap;
+}
+
+.mb-50{
+	margin-bottom: 50px;
+}
+
+.justify-between{
+	justify-content: space-between;
+}
+
+.mr-175{
+	margin-right: 175px;
+}
+
+.h-275px {
+	height: 275px;
+}
+
+.h-100vh {
+	height: 100vh;
+}
+
+.mt-10{
+	margin-top: 10px;
+}
+
+.p-20{
+	padding: 20px;
+}
+
 /* =========================================================
    Utility Classes - Spacing
    ========================================================= */
@@ -806,6 +867,10 @@ tbody:nth-child(even) {
 
 .p-20 {
 	padding: 20px;
+}
+
+.p-4 {
+	padding: 4px;
 }
 
 .ml-10 {
@@ -876,6 +941,18 @@ tbody:nth-child(even) {
 	margin-bottom: 20px;
 }
 
+.m-2 {
+	margin: 2px;
+}
+
+.m-5 {
+	margin: 5px;
+}
+
+.gap-5 {
+	gap: 5px;
+}
+
 .gap-25 {
 	gap: 25px;
 }
@@ -901,6 +978,10 @@ tbody:nth-child(even) {
 
 .txt-14 {
 	font-size: 14px;
+}
+
+.txt-18 {
+	font-size: 18px;
 }
 
 .txt-smallest {
@@ -971,6 +1052,20 @@ tbody:nth-child(even) {
 	border-radius: 12px;
 }
 
+.mb-10 {
+	margin-bottom: 10px;
+}
+
+
+.fw-600{
+	font-weight: 600;
+}
+
+.border-gray-300{
+		border: 2px solid #d1d5db;
+		border-radius: 12px;
+}
+
 .br-60 {
 	border-radius: 8px;
 }
@@ -1000,4 +1095,9 @@ tbody:nth-child(even) {
 		top: 60px;
 		left: 250px;
 	}
+
+
+
+
+
 }
