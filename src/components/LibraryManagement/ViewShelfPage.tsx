@@ -1,11 +1,9 @@
-import { Button } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
 import { useParams } from "react-router-dom";
 import { Nav } from "../Nav/Nav";
 import { BookcaseCard } from "./Components//BookcaseCard";
 
-function ViewShelfPage(props: any) {
+function _ViewShelfPage(_props: any) {
 	const { bookcaseId } = useParams();
 
 	const [bookshelves, setBookshelves] = useState<any[]>([]);
@@ -27,7 +25,7 @@ function ViewShelfPage(props: any) {
 
 	useEffect(() => {
 		fetchBookshelves();
-	}, []);
+	}, [fetchBookshelves]);
 
 	return (
 		<div>

@@ -16,7 +16,7 @@ function SearchPage() {
 			.then((response) => response.json())
 			.then((data) => {
 				console.log("Search results data:", data);
-				console.log("data length:" + data.length);
+				console.log(`data length:${data.length}`);
 				if (data.status === 404) {
 					console.log("No results found for the given ISBN.");
 					setSearchResults("No results found.");
@@ -32,8 +32,8 @@ function SearchPage() {
 	}
 
 	function searchResult(userSearchType: string, userSearchInput: string) {
-		console.log("Searching by: " + userSearchType);
-		console.log("User searched for: " + userSearchInput);
+		console.log(`Searching by: ${userSearchType}`);
+		console.log(`User searched for: ${userSearchInput}`);
 		fetchSearchResults(userSearchInput);
 	}
 	return (
