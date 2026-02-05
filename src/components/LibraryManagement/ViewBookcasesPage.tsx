@@ -24,7 +24,7 @@ function ViewBookcasesPage() {
 
 	useEffect(() => {
 		fetchBookcases();
-	}, []);
+	}, [fetchBookcases]);
 
 	return (
 		<div>
