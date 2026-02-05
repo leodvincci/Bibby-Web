@@ -2,7 +2,7 @@ import { ProgressCard } from "./Progress";
 
 function BookcaseCard(props: any) {
 	return (
-		<div className="border-gray-300 bookcase-card w-475px h-275px m-5 p-20 hover onclick cursor-pointer">
+		<div className="border-gray-300 bookcase-card w-475px m-5 p-20 hover onclick cursor-pointer">
 			<h1 className="blu-2">{props.location}</h1>
 			<section className="flex txt-18 gap-5 mb-10">
 				<p>{props.zone}</p>

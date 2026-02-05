@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Nav } from "../Nav/Nav";
 import { BookcaseCard } from "./Components//BookcaseCard";
 
-function ViewBookshelvesPage(_props: any) {
+function ViewBookshelvesPage() {
 	const { bookcaseId } = useParams();
 
 	const [bookshelves, setBookshelves] = useState<any[]>([]);
@@ -40,14 +40,16 @@ function ViewBookshelvesPage(_props: any) {
 
 				<section className="flex fw p-20 gap-25" id="bookshelfcards-section">
 					{bookshelves.map((bookshelf) => (
-						<BookcaseCard
-							key={bookshelf.shelfId}
-							location={bookshelf?.shelfLabel}
-							capacity={bookshelf?.bookCapacity}
-							zone={bookshelf?.bookcaseLabel.split(":")[0]}
-							identifier={bookshelf?.bookcaseLabel.split(":")[1]}
-							placed={bookshelf?.bookCount}
+						<Link to={`/bookshelves/view/shelf/${bookshelf.shelfId}`}>
+							<BookcaseCard
+								key={bookshelf.shelfId}
+								location={bookshelf?.shelfLabel}
+								capacity={bookshelf?.bookCapacity}
+								zone={bookshelf?.bookcaseLabel.split(":")[0]}
+								identifier={bookshelf?.bookcaseLabel.split(":")[1]}
+								placed={bookshelf?.bookCount}
 						></BookcaseCard>
+						</Link>
 					))}
 				</section>
 			</section>
