@@ -25,7 +25,7 @@ function ViewBookshelvesPage() {
 
 	useEffect(() => {
 		fetchBookshelves();
-	}, [fetchBookshelves]);
+	}, []);
 
 	return (
 		<div>
