@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import { Nav } from "../Nav/Nav";
 import { BookcaseCard } from "./Components//BookcaseCard";
 
-function _ViewShelfPage(_props: any) {
-	const { bookcaseId } = useParams();
+function ViewShelfPage() {
+	const { shelfId } = useParams();
 
-	const [bookshelves, setBookshelves] = useState<any[]>([]);
+	const [books, setBooks] = useState<any[]>([]);
 
-	function fetchBookshelves() {
-		fetch(`http://localhost:8080/api/v1/shelves/options/${bookcaseId}`, {
+	function fetchBooks() {
+		fetch(`http://localhost:8080/api/v1/books/shelf/${shelfId}`, {
 			method: "GET",
 			credentials: "include",
 			headers: {
@@ -19,13 +19,13 @@ function _ViewShelfPage(_props: any) {
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data);
-				setBookshelves(data);
+				setBooks(data);
 			});
 	}
 
 	useEffect(() => {
-		fetchBookshelves();
-	}, [fetchBookshelves]);
+		fetchBooks();
+	}, []);
 
 	return (
 		<div>
@@ -33,20 +33,18 @@ function _ViewShelfPage(_props: any) {
 			<section className=" ml-175px mr-175">
 				<div className="flex align-itms-ctr  p-20 mb-50">
 					<div>
-						<h1 className="blu">Bookshelves</h1>
-						<p>Pick a bookshelf to see what's on each shelf.</p>
+						<h1 className="blu">Shelf</h1>
+						<p>Pick a book from the shelf.</p>
 					</div>
 				</div>
 
 				<section className="flex fw p-20 gap-25" id="bookshelfcards-section">
-					{bookshelves.map((bookshelf) => (
+					{books.map((book) => (
 						<BookcaseCard
-							key={bookshelf.shelfId}
-							location={bookshelf?.shelfLabel}
-							capacity={bookshelf?.bookCapacity}
-							zone={bookshelf?.bookcaseLabel.split(":")[0]}
-							identifier={bookshelf?.bookcaseLabel.split(":")[1]}
-							placed={bookshelf?.bookCount}
+							key={book.bookId}
+							location={book?.title}
+							zone={book?.authors}
+							identifier={book?.isbn}
 						></BookcaseCard>
 					))}
 				</section>
@@ -55,4 +53,4 @@ function _ViewShelfPage(_props: any) {
 	);
 }
 
-export type { ViewBookshelvesPage };
+export { ViewShelfPage };
