@@ -1,21 +1,35 @@
 import { Box, Button, Flex, TextField } from "@radix-ui/themes";
 import BibbyLogo from "../../../public/bibbyLogo.png";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-	function handleSubmit(formData: FormData) {
-		// Handle form submission logic here
-		const firstName = formData.get("firstName");
-		const lastName = formData.get("lastName");
-		const email = formData.get("email");
-		const password = formData.get("password");
+		const navigate = useNavigate();
 
-		console.log("Sending to backend:", {
-			firstName,
-			lastName,
-			email,
-			password,
-		});
-	}
+	  function handleSubmit(formData: FormData) {
+      const email = formData.get("email");
+      const password = formData.get("password");
+
+      const body = new URLSearchParams();
+      body.append("username", email?.toString() || "");   // must be "username", not "email"
+      body.append("password", password?.toString() || "");
+
+      fetch("http://localhost:8080/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body,
+          credentials: "include",
+      })
+      .then((response) => {
+          if (response.ok) {
+              console.log("Login successful");
+			  navigate("/search")
+              // redirect or update state
+          } else {
+              console.log("Login failed:", response.status);
+          }
+      })
+      .catch((error) => console.error("Error:", error));
+  }
 
 	return (
 		<div id={"registration-page"} className="login-background">
