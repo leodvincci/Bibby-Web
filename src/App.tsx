@@ -20,6 +20,7 @@ createRoot(container).render(
 		<BrowserRouter>
 			<header></header>
 			<Routes>
+				<Route path="/" element={<LoginPage />} />
 				<Route path="/search" element={<SearchPage />} />
 				<Route path="/signup" element={<RegistrationPage />} />
 				<Route path="/login" element={<LoginPage />} />
