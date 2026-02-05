@@ -8,7 +8,7 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"biome:check": "biome check . --changed --since=origin/main",
-		"biome:apply": "biome check --write --unsafe . --changed --since=origin/main"
+		"biome:apply": "biome check --write . --changed --since=origin/main"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.13",

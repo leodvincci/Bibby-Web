@@ -40,7 +40,10 @@ function ViewBookshelvesPage() {
 
 				<section className="flex fw p-20 gap-25" id="bookshelfcards-section">
 					{bookshelves.map((bookshelf) => (
-						<Link to={`/bookshelves/view/shelf/${bookshelf.shelfId}`}>
+						<Link
+							to={`/bookshelves/view/shelf/${bookshelf.shelfId}`}
+							key={bookshelf.shelfId}
+						>
 							<BookcaseCard
 								key={bookshelf.shelfId}
 								location={bookshelf?.shelfLabel}
@@ -48,7 +51,7 @@ function ViewBookshelvesPage() {
 								zone={bookshelf?.bookcaseLabel.split(":")[0]}
 								identifier={bookshelf?.bookcaseLabel.split(":")[1]}
 								placed={bookshelf?.bookCount}
-						></BookcaseCard>
+							></BookcaseCard>
 						</Link>
 					))}
 				</section>

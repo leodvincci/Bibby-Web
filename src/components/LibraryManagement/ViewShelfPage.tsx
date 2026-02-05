@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Nav } from "../Nav/Nav";
 import { BookcaseCard } from "./Components//BookcaseCard";
 
@@ -40,12 +40,14 @@ function ViewShelfPage() {
 
 				<section className="flex fw p-20 gap-25" id="bookshelfcards-section">
 					{books.map((book) => (
-						<BookcaseCard
-							key={book.bookId}
-							location={book?.title}
-							zone={book?.authors}
-							identifier={book?.isbn}
-						></BookcaseCard>
+						<Link to={`/books/view/${book.isbn} `} key={book.isbn}>
+							<BookcaseCard
+								key={book.isbn}
+								location={book?.title}
+								zone={book?.authors}
+								identifier={book?.isbn}
+							></BookcaseCard>
+						</Link>
 					))}
 				</section>
 			</section>

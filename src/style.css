@@ -701,7 +701,7 @@ tbody:nth-child(even) {
 	display: flex;
 }
 
-.flex-column {
+.flex-col {
 	display: flex;
 	flex-direction: column;
 }
@@ -742,6 +742,10 @@ tbody:nth-child(even) {
 
 .w-7 {
 	width: 7vw;
+}
+
+.w-25 {
+	width: 25vw;
 }
 
 .w-50 {
