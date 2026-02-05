@@ -54,17 +54,16 @@ function ViewBookcasesPage() {
 
           
                     {bookcases.map((bookcase) => (
-                        <BookcaseCard
-                            key = {bookcase.bookcaseId}
-                            location={bookcase?.location}
-                            zone={bookcase?.bookcaseLabel.split(":")[0]}
-                            identifier={bookcase?.bookcaseLabel.split(":")[1]}
-                            capacity={bookcase?.bookCapacity}
-                        >
-
-                        </BookcaseCard>
+                        <Link to={`/bookshelves/view/${bookcase.bookcaseId}`} key={bookcase.bookcaseId}>
+                            <BookcaseCard
+                                location={bookcase?.location}
+                                zone={bookcase?.bookcaseLabel.split(":")[0]}
+                                identifier={bookcase?.bookcaseLabel.split(":")[1]}
+                                capacity={bookcase?.bookCapacity}
+                            >
+                            </BookcaseCard>
+                        </Link>
                     ))}
-
 
 
                 </section>
