@@ -36,7 +36,7 @@ function AddBookcasePage() {
 	return (
 		<div>
 			<Nav />
-			<section className="flex-column justify-center align-itms-ctr mt-50 p-20 mr-300">
+			<section className="flex-col justify-center align-itms-ctr mt-50 p-20 mr-300">
 				<div>
 					<h1 className="blu fw-500">Add a new bookcase to your library</h1>
 					<p className="txt-14 mp-0">
@@ -48,9 +48,9 @@ function AddBookcasePage() {
 			<form action={handleSubmit} className="add-bookcase-form">
 				<section
 					id="location-section"
-					className="flex-column  p-20 gap-25 justify-center align-itms-ctr mt-25"
+					className="flex-col  p-20 gap-25 justify-center align-itms-ctr mt-25"
 				>
-					<div className="flex-column">
+					<div className="flex-col">
 						<label className=" txt-13 mr-10 fw-400" htmlFor="Location">
 							Location
 						</label>
@@ -64,7 +64,7 @@ function AddBookcasePage() {
 						/>
 					</div>
 
-					<div className="flex-column">
+					<div className="flex-col">
 						<label className=" txt-13 mr-10 fw-400" htmlFor="Zone">
 							Zone
 						</label>
@@ -78,7 +78,7 @@ function AddBookcasePage() {
 						<p className="txt-8 blu">Specify the area within the location</p>
 					</div>
 
-					<div className="flex-column">
+					<div className="flex-col">
 						<label
 							className=" txt-13 mr-10 fw-400"
 							htmlFor="Bookcase-Identifier"
@@ -100,7 +100,7 @@ function AddBookcasePage() {
 
 				<section
 					id="capacity-section"
-					className=" flex-column p-20 gap-10 maxw-850 mt-30 align-center"
+					className=" flex-col p-20 gap-10 maxw-850 mt-30 align-center"
 				>
 					<p className="fw-500">Capacity</p>
 
