@@ -2,11 +2,29 @@ import * as React from "react";
 import { Nav } from "../Nav/Nav.tsx";
 import { SearchContainer } from "./SearchContainer.tsx";
 import { SearchResultContainer } from "./SearchResultContainer.tsx";
+import { data } from "react-router";
 
 function SearchPage() {
 	// const searchResultCount:number = 4;
 	const [searchResults, setSearchResults] = React.useState("");
 	const [searchResultCount, setSearchResultCount] = React.useState<number>(-42); // -42: no search performed yet | 0: no results found | ≥1: number of results found
+	const [locationData, setLocationData] = React.useState([]);
+	const [bookId, setBookId] = React.useState<number>(-1);
+
+	function fetchLocationData(bookId: number) {
+		fetch(`https://bibby-app-production.up.railway.app/api/v1/books/booklocation?bookId=${bookId}`, {
+			method: "GET",
+			credentials: "include",
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log("Book location data:", data);
+				setLocationData(data);
+			})
+			.catch((error) => {
+				console.error("Error fetching book location data:", error);
+			});
+	}
 
 	function fetchSearchResults(isbn: string) {
 		fetch(`http://localhost:8080/api/v1/books/search/${isbn}`, {
@@ -24,7 +42,10 @@ function SearchPage() {
 					return;
 				}
 				setSearchResults(data);
+				console.log(`Book ID from search results: ${data.id}`);
+				setBookId(data.id); // Assuming the first result is the most relevant one
 				setSearchResultCount(1);
+				fetchLocationData(data.id);
 			})
 			.catch((error) => {
 				console.error("Error fetching search results:", error);
@@ -60,6 +81,8 @@ function SearchPage() {
 				<SearchResultContainer
 					searchResults={searchResults}
 					searchResultCount={searchResultCount}
+					locationData={locationData}
+					bookId={bookId}
 				/>
 			</section>
 		</div>

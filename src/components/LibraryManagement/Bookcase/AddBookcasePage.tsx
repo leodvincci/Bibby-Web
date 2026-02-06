@@ -1,5 +1,5 @@
 import { Button } from "@radix-ui/themes";
-import { Nav } from "../Nav/Nav";
+import { Nav } from "../../Nav/Nav";
 
 function AddBookcasePage() {
 	// const [location, setLocation] = useState("");
@@ -17,7 +17,7 @@ function AddBookcasePage() {
 		var shelfCount = formData.get("shelfCount");
 		var shelfCapacity = formData.get("shelfCapacity");
 
-		fetch("http://localhost:8080/api/v1/bookcase/create", {
+		fetch("https://bibby-app-production.up.railway.app/api/v1/bookcase/create", {
 			method: "POST",
 			credentials: "include",
 			headers: {
@@ -114,7 +114,7 @@ function AddBookcasePage() {
 							id="shelfCount"
 							name="shelfCount"
 							className=" w-7 h-40 br-60 bg-grey-light mb-20"
-							placeholder="42"
+							placeholder="6"
 						/>
 					</div>
 

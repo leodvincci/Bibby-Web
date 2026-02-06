@@ -12,7 +12,7 @@ function SearchResultContainer(props: any) {
 				Results ({props.searchResultCount})
 			</p>
 			<hr />
-			<SearchResults searchResults={props.searchResults} />
+			<SearchResults searchResults={props.searchResults} locationData={props.locationData} bookId={props.bookId} />
 		</div>
 	);
 }

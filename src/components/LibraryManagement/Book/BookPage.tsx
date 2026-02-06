@@ -1,4 +1,4 @@
-import { Nav } from "../Nav/Nav.tsx";
+import { Nav } from "../../Nav/Nav";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 
@@ -9,7 +9,7 @@ function BookPage() {
   const [bookData, setBookData] = useState<any>(null);
 
   function fetchBookData() {
-    fetch(`http://localhost:8080/api/v1/books/search/${isbn}`, {
+    fetch(`https://bibby-app-production.up.railway.app/api/v1/books/search/${isbn}`, {
       method: "GET",
       credentials: "include",
       headers: {

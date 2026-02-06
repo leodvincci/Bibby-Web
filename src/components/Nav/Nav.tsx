@@ -7,7 +7,7 @@ function Nav() {
 	const navigate = useNavigate();
 	  const { logout } = useAuth();
 	function handleLogout() {
-		fetch("http://localhost:8080/logout", {
+		fetch("https://bibby-app-production.up.railway.app/logout", {
 			method: "POST",
 			credentials: "include",
 		})

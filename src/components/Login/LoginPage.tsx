@@ -15,7 +15,7 @@ function LoginPage() {
 		body.append("username", email?.toString() || "");   // must be "username", not "email"
 		body.append("password", password?.toString() || "");
 
-		fetch("http://localhost:8080/login", {
+		fetch("https://bibby-app-production.up.railway.app/login", {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: body,
