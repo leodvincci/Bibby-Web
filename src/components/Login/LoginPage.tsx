@@ -1,35 +1,38 @@
 import { Box, Button, Flex, TextField } from "@radix-ui/themes";
 import BibbyLogo from "../../../public/bibbyLogo.png";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 function LoginPage() {
-		const navigate = useNavigate();
+	const navigate = useNavigate();
+	const { login } = useAuth();
 
-	  function handleSubmit(formData: FormData) {
-      const email = formData.get("email");
-      const password = formData.get("password");
+	function handleSubmit(formData: FormData) {
+		const email = formData.get("email");
+		const password = formData.get("password");
 
-      const body = new URLSearchParams();
-      body.append("username", email?.toString() || "");   // must be "username", not "email"
-      body.append("password", password?.toString() || "");
+		const body = new URLSearchParams();
+		body.append("username", email?.toString() || "");   // must be "username", not "email"
+		body.append("password", password?.toString() || "");
 
-      fetch("http://localhost:8080/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: body,
-          credentials: "include",
-      })
-      .then((response) => {
-          if (response.ok) {
-              console.log("Login successful");
-			  navigate("/search")
-              // redirect or update state
-          } else {
-              console.log("Login failed:", response.status);
-          }
-      })
-      .catch((error) => console.error("Error:", error));
-  }
+		fetch("http://localhost:8080/login", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: body,
+			credentials: "include",
+		})
+			.then((response) => {
+				if (response.ok) {
+					console.log("Login successful");
+					login(); // Update auth context	
+					navigate("/search")
+					// redirect or update state
+				} else {
+					console.log("Login failed:", response.status);
+				}
+			})
+			.catch((error) => console.error("Error:", error));
+	}
 
 	return (
 		<div id={"registration-page"} className="login-background">

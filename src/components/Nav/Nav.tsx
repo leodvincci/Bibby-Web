@@ -1,9 +1,11 @@
 import { Button } from "@radix-ui/themes";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 function Nav() {
 
 	const navigate = useNavigate();
+	  const { logout } = useAuth();
 	function handleLogout() {
 		fetch("http://localhost:8080/logout", {
 			method: "POST",
@@ -12,7 +14,7 @@ function Nav() {
 		.then((response) => {
 			if (response.ok) {
 				console.log("Logout successful");
-				// redirect or update state
+				logout(); // Update auth context
 				navigate("/login");
 			} else {
 				console.log("Logout failed:", response.status);
