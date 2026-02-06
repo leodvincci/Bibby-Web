@@ -2,7 +2,6 @@ import * as React from "react";
 import { Nav } from "../Nav/Nav.tsx";
 import { SearchContainer } from "./SearchContainer.tsx";
 import { SearchResultContainer } from "./SearchResultContainer.tsx";
-import { data } from "react-router";
 
 function SearchPage() {
 	// const searchResultCount:number = 4;
@@ -27,7 +26,7 @@ function SearchPage() {
 	}
 
 	function fetchSearchResults(isbn: string) {
-		fetch(`http://localhost:8080/api/v1/books/search/${isbn}`, {
+		fetch(`https://bibby-app-production.up.railway.app/api/v1/books/search/${isbn}`, {
 			method: "GET",
 			credentials: "include",
 		})
