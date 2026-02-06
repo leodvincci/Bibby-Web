@@ -134,7 +134,7 @@ function AddBookPage() {
 
 	useEffect(() => {
 		fetchBookcaseLocations();
-	}, [fetchBookcaseLocations]);
+	}, []);
 
 	const ref = useRef<HTMLInputElement>(null);
 
