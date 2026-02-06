@@ -9,7 +9,7 @@ function ViewBookshelvesPage() {
 	const [bookshelves, setBookshelves] = useState<any[]>([]);
 
 	function fetchBookshelves() {
-		fetch(`http://localhost:8080/api/v1/shelves/options/${bookcaseId}`, {
+		fetch(`https://bibby-app-production.up.railway.app/api/v1/shelves/options/${bookcaseId}`, {
 			method: "GET",
 			credentials: "include",
 			headers: {

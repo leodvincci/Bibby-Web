@@ -12,7 +12,7 @@ function SearchPage() {
 	const [bookId, setBookId] = React.useState<number>(-1);
 
 	function fetchLocationData(bookId: number) {
-		fetch(`http://localhost:8080/api/v1/books/booklocation?bookId=${bookId}`, {
+		fetch(`https://bibby-app-production.up.railway.app/api/v1/books/booklocation?bookId=${bookId}`, {
 			method: "GET",
 			credentials: "include",
 		})

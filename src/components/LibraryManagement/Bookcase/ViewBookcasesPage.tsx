@@ -8,7 +8,7 @@ function ViewBookcasesPage() {
 	const [bookcases, setBookcases] = useState<any[]>([]);
 
 	function fetchBookcases() {
-		fetch("http://localhost:8080/api/v1/bookcase/all", {
+		fetch("https://bibby-app-production.up.railway.app/api/v1/bookcase/all", {
 			method: "GET",
 			credentials: "include",
 			headers: {

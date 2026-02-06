@@ -9,7 +9,7 @@ function BookPage() {
   const [bookData, setBookData] = useState<any>(null);
 
   function fetchBookData() {
-    fetch(`http://localhost:8080/api/v1/books/search/${isbn}`, {
+    fetch(`https://bibby-app-production.up.railway.app/api/v1/books/search/${isbn}`, {
       method: "GET",
       credentials: "include",
       headers: {

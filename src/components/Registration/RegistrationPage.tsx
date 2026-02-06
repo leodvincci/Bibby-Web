@@ -8,7 +8,7 @@ function RegistrationPage() {
 		// Handle form submission logic here
 		const email = formData.get("email");
 		const password = formData.get("password");
-		fetch("http://localhost:8080/api/v1/user/registration/register", {
+		fetch("https://bibby-app-production.up.railway.app/api/v1/user/registration/register", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
