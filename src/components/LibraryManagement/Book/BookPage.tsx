@@ -1,4 +1,4 @@
-import { Nav } from "../Nav/Nav.tsx";
+import { Nav } from "../../Nav/Nav";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 

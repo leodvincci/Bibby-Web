@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Nav } from "../Nav/Nav";
-import { BookcaseCard } from "./Components//BookcaseCard";
+import { Nav } from "../../Nav/Nav";
+import { BookcaseCard } from "../Components/BookcaseCard";
 
 function ViewBookshelvesPage() {
 	const { bookcaseId } = useParams();

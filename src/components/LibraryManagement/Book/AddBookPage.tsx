@@ -1,6 +1,6 @@
 import { Button } from "@radix-ui/themes";
 import { useEffect, useRef, useState } from "react";
-import { Nav } from "../Nav/Nav";
+import { Nav } from "../../Nav/Nav";
 
 function AddBookPage() {
 	const titleRef = useRef<HTMLInputElement>(null);

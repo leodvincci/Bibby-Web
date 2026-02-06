@@ -1,8 +1,8 @@
 import { Button } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { Nav } from "../Nav/Nav";
-import { BookcaseCard } from "./Components//BookcaseCard";
+import { Nav } from "../../Nav/Nav";
+import { BookcaseCard } from "../Components/BookcaseCard";
 
 function ViewBookcasesPage() {
 	const [bookcases, setBookcases] = useState<any[]>([]);

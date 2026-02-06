@@ -42,7 +42,7 @@ function SearchResults(props: any) {
 						<td>{props.searchResults.isbn}</td>
 						<td>{props.searchResults.title}</td>
 						<td>{props.searchResults.authors}</td>
-						<td>{props.searchResults.shelfId}</td>
+						<td>{props.locationData.bookcaseLocation + " • " + props.locationData.bookcaseLabel + " • " + props.locationData.shelfLabel}</td>
 					</tr>
 				</tbody>
 
