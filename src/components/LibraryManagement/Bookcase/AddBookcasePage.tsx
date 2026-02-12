@@ -1,5 +1,6 @@
 import { Button } from "@radix-ui/themes";
 import { Nav } from "../../Nav/Nav";
+import { API_URL } from "../../../config/api";
 
 function AddBookcasePage() {
 	// const [location, setLocation] = useState("");
@@ -17,7 +18,7 @@ function AddBookcasePage() {
 		var shelfCount = formData.get("shelfCount");
 		var shelfCapacity = formData.get("shelfCapacity");
 
-		fetch("https://bibby-app-production.up.railway.app/api/v1/bookcase/create", {
+		fetch(`${API_URL}/api/v1/bookcase/create`, {
 			method: "POST",
 			credentials: "include",
 			headers: {

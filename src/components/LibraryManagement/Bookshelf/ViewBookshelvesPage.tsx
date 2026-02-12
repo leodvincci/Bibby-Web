@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Nav } from "../../Nav/Nav";
 import { BookcaseCard } from "../Components/BookcaseCard";
+import { API_URL } from "../../../config/api";
 
 function ViewBookshelvesPage() {
 	const { bookcaseId } = useParams();
@@ -9,7 +10,7 @@ function ViewBookshelvesPage() {
 	const [bookshelves, setBookshelves] = useState<any[]>([]);
 
 	function fetchBookshelves() {
-		fetch(`https://bibby-app-production.up.railway.app/api/v1/shelves/options/${bookcaseId}`, {
+		fetch(`${API_URL}/api/v1/shelves/options/${bookcaseId}`, {
 			method: "GET",
 			credentials: "include",
 			headers: {

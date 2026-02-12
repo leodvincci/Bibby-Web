@@ -1,6 +1,7 @@
 import { Button } from "@radix-ui/themes";
 import { useEffect, useRef, useState } from "react";
 import { Nav } from "../../Nav/Nav";
+import { API_URL } from "../../../config/api";
 
 function AddBookPage() {
 	const titleRef = useRef<HTMLInputElement>(null);
@@ -29,7 +30,7 @@ function AddBookPage() {
 	));
 
 	function fetchBookShelves(bookcaseId: string) {
-		fetch(`https://bibby-app-production.up.railway.app/api/v1/shelves/options/${bookcaseId}`, {
+		fetch(`${API_URL}/api/v1/shelves/options/${bookcaseId}`, {
 			method: "GET",
 			credentials: "include",
 			headers: {
@@ -55,7 +56,7 @@ function AddBookPage() {
 	}
 
 	function fetchBookcaseLocations() {
-		fetch("https://bibby-app-production.up.railway.app/api/v1/bookcase/locations", {
+		fetch(`${API_URL}/api/v1/bookcase/locations`, {
 			method: "GET",
 			credentials: "include",
 			headers: {
@@ -80,7 +81,7 @@ function AddBookPage() {
 
 	function fetchMetadata() {
 		console.log(`fetching metadata...${ref.current?.value}`);
-		fetch("https://bibby-app-production.up.railway.app/api/v1/books/fetchbookmetadata", {
+		fetch(`${API_URL}/api/v1/books/fetchbookmetadata`, {
 			method: "POST",
 			credentials: "include",
 			headers: {
@@ -108,7 +109,7 @@ function AddBookPage() {
 	}
 
 	function fetchBookcases(location?: string) {
-		fetch(`https://bibby-app-production.up.railway.app/api/v1/bookcase/location/${location}`, {
+		fetch(`${API_URL}/api/v1/bookcase/location/${location}`, {
 			method: "GET",
 			credentials: "include",
 			headers: {
@@ -145,7 +146,7 @@ function AddBookPage() {
 		const shelfId = formData.get("bookshelves");
 		try {
 			const response = await fetch(
-				"https://bibby-app-production.up.railway.app/api/v1/books/addnewbook",
+				`${API_URL}/api/v1/books/addnewbook`,
 				{
 					method: "POST",
 					credentials: "include",

@@ -1,13 +1,14 @@
 import { Button } from "@radix-ui/themes";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { API_URL } from "../../config/api";
 
 function Nav() {
 
 	const navigate = useNavigate();
 	  const { logout } = useAuth();
 	function handleLogout() {
-		fetch("https://bibby-app-production.up.railway.app/logout", {
+		fetch(`${API_URL}/logout`, {
 			method: "POST",
 			credentials: "include",
 		})

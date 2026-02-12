@@ -1,6 +1,7 @@
 import { Nav } from "../../Nav/Nav";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import { API_URL } from "../../../config/api";
 
 function BookPage() {
 
@@ -9,7 +10,7 @@ function BookPage() {
   const [bookData, setBookData] = useState<any>(null);
 
   function fetchBookData() {
-    fetch(`https://bibby-app-production.up.railway.app/api/v1/books/search/${isbn}`, {
+    fetch(`${API_URL}/api/v1/books/search/${isbn}`, {
       method: "GET",
       credentials: "include",
       headers: {

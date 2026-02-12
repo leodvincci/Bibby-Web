@@ -3,12 +3,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { Nav } from "../../Nav/Nav";
 import { BookcaseCard } from "../Components/BookcaseCard";
+import { API_URL } from "../../../config/api";
 
 function ViewBookcasesPage() {
 	const [bookcases, setBookcases] = useState<any[]>([]);
 
 	function fetchBookcases() {
-		fetch("https://bibby-app-production.up.railway.app/api/v1/bookcase/all", {
+		fetch(`${API_URL}/api/v1/bookcase/all`, {
 			method: "GET",
 			credentials: "include",
 			headers: {

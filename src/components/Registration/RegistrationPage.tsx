@@ -1,6 +1,7 @@
 import { Box, Button, Flex, TextField } from "@radix-ui/themes";
 import { useNavigate } from "react-router-dom";
 import BibbyLogo from "../../../public/bibbyLogo.png";
+import { API_URL } from "../../config/api";
 
 function RegistrationPage() {
 	const navigate = useNavigate();
@@ -8,7 +9,7 @@ function RegistrationPage() {
 		// Handle form submission logic here
 		const email = formData.get("email");
 		const password = formData.get("password");
-		fetch("https://bibby-app-production.up.railway.app/api/v1/user/registration/register", {
+		fetch(`${API_URL}/api/v1/user/registration/register`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

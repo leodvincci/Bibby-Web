@@ -2,6 +2,7 @@ import { Box, Button, Flex, TextField } from "@radix-ui/themes";
 import BibbyLogo from "../../../public/bibbyLogo.png";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { API_URL } from "../../config/api";
 
 function LoginPage() {
 	const navigate = useNavigate();
@@ -15,7 +16,7 @@ function LoginPage() {
 		body.append("username", email?.toString() || "");   // must be "username", not "email"
 		body.append("password", password?.toString() || "");
 
-		fetch("https://bibby-app-production.up.railway.app/login", {
+		fetch(`${API_URL}/login`, {
 			method: "POST",
 			headers: { "Content-Type": "application/x-www-form-urlencoded" },
 			body: body,

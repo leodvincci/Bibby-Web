@@ -2,6 +2,7 @@ import * as React from "react";
 import { Nav } from "../Nav/Nav.tsx";
 import { SearchContainer } from "./SearchContainer.tsx";
 import { SearchResultContainer } from "./SearchResultContainer.tsx";
+import { API_URL } from "../../config/api";
 
 function SearchPage() {
 	// const searchResultCount:number = 4;
@@ -11,7 +12,7 @@ function SearchPage() {
 	const [bookId, setBookId] = React.useState<number>(-1);
 
 	function fetchLocationData(bookId: number) {
-		fetch(`https://bibby-app-production.up.railway.app/api/v1/books/booklocation?bookId=${bookId}`, {
+		fetch(`${API_URL}/api/v1/books/booklocation?bookId=${bookId}`, {
 			method: "GET",
 			credentials: "include",
 		})
@@ -26,7 +27,7 @@ function SearchPage() {
 	}
 
 	function fetchSearchResults(isbn: string) {
-		fetch(`https://bibby-app-production.up.railway.app/api/v1/books/search/${isbn}`, {
+		fetch(`${API_URL}/api/v1/books/search/${isbn}`, {
 			method: "GET",
 			credentials: "include",
 		})
