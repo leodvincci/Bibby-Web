@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { Nav } from "../../Nav/Nav";
 import { BookcaseCard } from "../Components/BookcaseCard";
 import { API_URL } from "../../../config/api";
@@ -8,6 +8,8 @@ function ViewBookshelvesPage() {
 	const { bookcaseId } = useParams();
 
 	const [bookshelves, setBookshelves] = useState<any[]>([]);
+	const location = useLocation();
+	
 
 	function fetchBookshelves() {
 		fetch(`${API_URL}/api/v1/shelves/options/${bookcaseId}`, {
@@ -34,7 +36,7 @@ function ViewBookshelvesPage() {
 			<section className=" ml-175px mr-175">
 				<div className="flex align-itms-ctr  p-20 mb-50">
 					<div>
-						<h1 className="blu">Bookshelves</h1>
+						<h1 className="blu">{location.state?.bookcaseLocation} :: {location.state?.bookcaseLabel} :: Bookshelves</h1>
 						<p>Pick a bookshelf to see what's on each shelf.</p>
 					</div>
 				</div>
@@ -44,6 +46,7 @@ function ViewBookshelvesPage() {
 						<Link
 							to={`/bookshelves/view/shelf/${bookshelf.shelfId}`}
 							key={bookshelf.shelfId}
+							state={{bookshelfLocation:location.state.bookcaseLocation, shelfLabel:bookshelf.shelfLabel, bookcaseLabel:bookshelf.bookcaseLabel}}
 						>
 							<BookcaseCard
 								key={bookshelf.shelfId}

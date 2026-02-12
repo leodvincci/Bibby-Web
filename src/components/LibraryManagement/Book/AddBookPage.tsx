@@ -2,6 +2,7 @@ import { Button } from "@radix-ui/themes";
 import { useEffect, useRef, useState } from "react";
 import { Nav } from "../../Nav/Nav";
 import { API_URL } from "../../../config/api";
+import { useLocation } from "react-router";
 
 function AddBookPage() {
 	const titleRef = useRef<HTMLInputElement>(null);
@@ -10,6 +11,7 @@ function AddBookPage() {
 	const [bookcases, setBookcases] = useState([]);
 	const [locations, setLocations] = useState([]);
 	const [bookshelves, setBookshelves] = useState([]);
+	const location = useLocation();
 
 	var caseOptions = bookcases.map((bookcase: any) => (
 		<option key={bookcase.bookcaseId} value={bookcase.bookcaseId}>
@@ -28,6 +30,8 @@ function AddBookPage() {
 			{shelf.shelfLabel}
 		</option>
 	));
+
+	console.log("Location state:", location.state);
 
 	function fetchBookShelves(bookcaseId: string) {
 		fetch(`${API_URL}/api/v1/shelves/options/${bookcaseId}`, {
@@ -257,9 +261,11 @@ function AddBookPage() {
 							onChange={() => fetchBookcases(locationRef.current?.value)}
 							ref={locationRef}
 							name="locations"
+							defaultValue={location.state?.bookshelfLocation || ""}
 							className="w-600 h-40 br-60 bg-grey-light"
 						>
 							<option value={""}> Select a location</option>
+							{location.state !== null ? <option value={location.state?.bookshelfLocation}>{location.state?.bookshelfLocation}</option> : null}
 							{locationOptions}
 						</select>
 					</div>
@@ -274,9 +280,14 @@ function AddBookPage() {
 								fetchBookShelves(e.target.value);
 							}}
 							name="bookcases"
+							defaultValue={location.state?.bookcaseLabel || ""}
+
+
 							className="w-600 h-40 br-60 bg-grey-light"
 						>
 							<option value={""}>Select a bookcase</option>
+							<option value={location.state?.bookcaseLabel}>{location.state?.bookcaseLabel}</option>
+
 							{caseOptions}
 						</select>
 					</div>
@@ -291,9 +302,11 @@ function AddBookPage() {
 								console.log(e.target.value);
 							}}
 							name="bookshelves"
+							defaultValue={location.state?.shelfId || ""}
 							className="w-600 h-40 br-60 bg-grey-light"
 						>
 							<option value={""}>Select a shelf</option>
+							<option value={location.state?.shelfId}>{location.state?.shelfLabel}</option>
 							{shelfOptions}
 						</select>
 					</div>
