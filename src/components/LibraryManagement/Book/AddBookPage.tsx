@@ -80,7 +80,7 @@ function AddBookPage() {
 
 	function fetchMetadata() {
 		console.log(`fetching metadata...${ref.current?.value}`);
-		fetch("http://localhost:8080/api/v1/books/fetchbookmetadata", {
+		fetch("https://bibby-app-production.up.railway.app/api/v1/books/fetchbookmetadata", {
 			method: "POST",
 			credentials: "include",
 			headers: {
