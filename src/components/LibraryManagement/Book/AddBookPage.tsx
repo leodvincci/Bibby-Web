@@ -1,6 +1,8 @@
 import { Button } from "@radix-ui/themes";
 import { useEffect, useRef, useState } from "react";
 import { Nav } from "../../Nav/Nav";
+import { API_URL } from "../../../config/api";
+import { useLocation } from "react-router";
 
 function AddBookPage() {
 	const titleRef = useRef<HTMLInputElement>(null);
@@ -9,6 +11,7 @@ function AddBookPage() {
 	const [bookcases, setBookcases] = useState([]);
 	const [locations, setLocations] = useState([]);
 	const [bookshelves, setBookshelves] = useState([]);
+	const location = useLocation();
 
 	var caseOptions = bookcases.map((bookcase: any) => (
 		<option key={bookcase.bookcaseId} value={bookcase.bookcaseId}>
@@ -28,8 +31,10 @@ function AddBookPage() {
 		</option>
 	));
 
+	console.log("Location state:", location.state);
+
 	function fetchBookShelves(bookcaseId: string) {
-		fetch(`https://bibby-app-production.up.railway.app/api/v1/shelves/options/${bookcaseId}`, {
+		fetch(`${API_URL}/api/v1/shelves/options/${bookcaseId}`, {
 			method: "GET",
 			credentials: "include",
 			headers: {
@@ -55,7 +60,7 @@ function AddBookPage() {
 	}
 
 	function fetchBookcaseLocations() {
-		fetch("https://bibby-app-production.up.railway.app/api/v1/bookcase/locations", {
+		fetch(`${API_URL}/api/v1/bookcase/locations`, {
 			method: "GET",
 			credentials: "include",
 			headers: {
@@ -80,7 +85,7 @@ function AddBookPage() {
 
 	function fetchMetadata() {
 		console.log(`fetching metadata...${ref.current?.value}`);
-		fetch("http://localhost:8080/api/v1/books/fetchbookmetadata", {
+		fetch(`${API_URL}/api/v1/books/fetchbookmetadata`, {
 			method: "POST",
 			credentials: "include",
 			headers: {
@@ -108,7 +113,7 @@ function AddBookPage() {
 	}
 
 	function fetchBookcases(location?: string) {
-		fetch(`https://bibby-app-production.up.railway.app/api/v1/bookcase/location/${location}`, {
+		fetch(`${API_URL}/api/v1/bookcase/location/${location}`, {
 			method: "GET",
 			credentials: "include",
 			headers: {
@@ -145,7 +150,7 @@ function AddBookPage() {
 		const shelfId = formData.get("bookshelves");
 		try {
 			const response = await fetch(
-				"https://bibby-app-production.up.railway.app/api/v1/books/addnewbook",
+				`${API_URL}/api/v1/books/addnewbook`,
 				{
 					method: "POST",
 					credentials: "include",
@@ -256,9 +261,11 @@ function AddBookPage() {
 							onChange={() => fetchBookcases(locationRef.current?.value)}
 							ref={locationRef}
 							name="locations"
+							defaultValue={location.state?.bookshelfLocation || ""}
 							className="w-600 h-40 br-60 bg-grey-light"
 						>
 							<option value={""}> Select a location</option>
+							{location.state !== null ? <option value={location.state?.bookshelfLocation}>{location.state?.bookshelfLocation}</option> : null}
 							{locationOptions}
 						</select>
 					</div>
@@ -273,9 +280,14 @@ function AddBookPage() {
 								fetchBookShelves(e.target.value);
 							}}
 							name="bookcases"
+							defaultValue={location.state?.bookcaseLabel || ""}
+
+
 							className="w-600 h-40 br-60 bg-grey-light"
 						>
 							<option value={""}>Select a bookcase</option>
+							<option value={location.state?.bookcaseLabel}>{location.state?.bookcaseLabel}</option>
+
 							{caseOptions}
 						</select>
 					</div>
@@ -290,9 +302,11 @@ function AddBookPage() {
 								console.log(e.target.value);
 							}}
 							name="bookshelves"
+							defaultValue={location.state?.shelfId || ""}
 							className="w-600 h-40 br-60 bg-grey-light"
 						>
 							<option value={""}>Select a shelf</option>
+							<option value={location.state?.shelfId}>{location.state?.shelfLabel}</option>
 							{shelfOptions}
 						</select>
 					</div>
