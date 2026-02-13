@@ -24,7 +24,7 @@ function BookcaseCard(props: any) {
 					<div className="border-gray-300 w-150px m-10 h-8 white-bg p-10  ">
 
 						<section onClick={(e) => { e.preventDefault(); }} className="delete-option h-1p m-10">
-							<img src="../../public/edit.png" className="w-8" alt="" />
+							<img src="/edit.png" className="w-8" alt="" />
 
 							<p className="blu hover-bold">edit</p>
 						</section>
@@ -33,7 +33,7 @@ function BookcaseCard(props: any) {
 						</div>
 
 						<section onClick={(e) => { e.preventDefault(); }} className="hover-bold delete-option h-12p m-10">
-							<img src="../../public/delete.png" className="w-8" alt="" />
+							<img src="/delete.png" className="w-8" alt="" />
 							<p className="red ">delete</p>
 						</section>
 					</div>
