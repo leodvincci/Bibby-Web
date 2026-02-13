@@ -29,7 +29,7 @@ function Nav() {
         Bibby
       </Link>
       <ul id={"nav-items"}>
-        <div className="flex row gap-15">
+        <div className="flex row gap-20">
           <Link to="/search">
             <li>Search</li>
           </Link>
