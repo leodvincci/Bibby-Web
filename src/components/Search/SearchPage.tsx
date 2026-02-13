@@ -70,7 +70,7 @@ function SearchPage() {
 							"animate__animated animate__bounce animate__delay-1s animate__repeat-2"
 						}
 						id="book-stack-icon"
-						src={"public/bookStack2.png"}
+						src={"../../public/bookStack2.png"}
 					/>
 				</p>
 				<p className={"page-subtitle"}>
