@@ -1,36 +1,14 @@
 import { ProgressCard } from "./Progress";
-import { useState } from "react";
 
 function BookcaseCard(props: any) {
-
-	const [isEditMenu, setIsEditMenu] =  useState(false);
 	return (
 		<div className="border-gray-300 bookcase-card w-475px m-5 p-20 hover onclick cursor-pointer">
-				<p onClick={(e)=>{e.preventDefault(); setIsEditMenu(!isEditMenu); }} className=" flex row just-end txt-10 blu w-8p ml-90p trans-50p hover-meatballs">● ● ●</p>
-
 			<h1 className="blu-2">{props.location}</h1>
 			<section className="flex txt-18 gap-5 mb-10">
 				<p>{props.zone}</p>
 				<p>•</p>
-				<p className="mr-150">{props.identifier}</p>
-
-				{isEditMenu && 
-				
-				<div className="border-gray-300 w-150px ml-50 m-10 h-80 white-bg">
-					
-					<section onClick={(e)=>{e.preventDefault();}} className=" h-10p m-10">
-						<p className="blu hover-bold">edit</p>
-					</section>
-
-					<section onClick={(e)=>{e.preventDefault();}} className=" h-10p m-10">
-						<p className="danger-red hover-bold">delete</p>
-					
-					</section>
-				</div>}
-
+				<p>{props.identifier}</p>
 			</section>
-
-	
 
 			{/* <section className=" flex txt-14 gap-5 ">
                 <p className="fw-600">{props.capacity}</p>
