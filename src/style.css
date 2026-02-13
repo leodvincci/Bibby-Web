@@ -87,7 +87,7 @@ nav {
 	font-weight: 200;
 	font-size: 24px;
 	color: #011840;
-	width: auto;
+	width: 100vw;
 	height: 115px;
 	background-color: #fbfbfb;
 	padding: 0 40px;
@@ -124,8 +124,6 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 68px;
-	padding-right: 255px;
 }
 
 #nav-items > li:hover {
@@ -1091,8 +1089,20 @@ tbody:nth-child(even) {
 	gap: 5px;
 }
 
+.gap-8{
+	gap: 8px;
+}
+
 .gap-10 {
 	gap: 10px;
+}
+
+.gap-12{
+	gap: 12px;
+}
+
+.gap-15 {
+	gap: 15px;
 }
 
 .gap-25 {
