@@ -706,6 +706,14 @@ tbody:nth-child(even) {
 	flex-direction: column;
 }
 
+.row{
+	flex-direction: row;
+}
+
+.just-end{
+	justify-content: flex-end;
+}
+
 .flex-grow-1 {
 	flex-grow: 10;
 }
@@ -740,8 +748,13 @@ tbody:nth-child(even) {
 	width: 5vw;
 }
 
+
 .w-7 {
 	width: 7vw;
+}
+
+.w-8{
+	width: 14px;
 }
 
 .w-25 {
@@ -758,6 +771,20 @@ tbody:nth-child(even) {
 
 .txt-24 {
 	font-size: 24px;
+}
+
+.trans-50p{
+	opacity: 50%;
+}
+
+.hover-meatballs:hover {
+	opacity: 80%;
+	cursor: pointer;
+}
+
+.hover-bold:hover {
+	font-weight: 700;
+	cursor: pointer;
 }
 
 .hover:hover {
@@ -781,12 +808,36 @@ tbody:nth-child(even) {
 	width: 75vw;
 }
 
+.w-8p{
+	width: 8%;
+}
+
+.w-15{
+	width: 15vw;
+}
+
+.w-15p{
+	width: 35%;
+}
+
+.w-150px{
+	width: 150px;
+}
+
 .w-100 {
 	max-width: 100vw;
 }
 
+.w-100p {
+	width: 100%;
+}
+
 .w-500 {
 	width: 500px;
+}
+
+.w-50p{
+	width: 50%;
 }
 
 .w-600 {
@@ -817,12 +868,70 @@ tbody:nth-child(even) {
 	max-width: 50vw;
 }
 
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.top-10{
+	top: 350px;
+}
+
+
+.h-10p{
+	height: 25%;
+}
+
+.h-8{
+	height: 115px;
+}
+
+.fw-300 {
+	font-weight: 300;
+}
+
+.h-35p{
+	height: 35%;
+}
+
+.h-100{
+	height: 100px;
+}
+
+.h-80{
+	height: 80px;
+}
+
 .h-40 {
 	height: 40px;
 }
 
+
+.ml-50{
+	margin-left: 500px;
+}
+
+.mr-50 {
+	margin-right: 50px;
+}
+
+.ml-10{	
+	margin-left: 100px;
+}
+
 .ml-175px {
 	margin-left: 175px;
+}
+
+.ml-200{
+	margin-left: 200px;
+}
+
+.ml-90p{
+	margin-left: 90%;
 }
 
 .ml-10px {
@@ -839,6 +948,24 @@ tbody:nth-child(even) {
 
 .justify-between {
 	justify-content: space-between;
+}
+
+.space-evenly {
+	justify-content: space-evenly;
+}
+
+.space-around {
+	justify-content: space-around;
+}
+
+
+
+.mr-50{
+	margin-right: 50px;
+}
+
+.mr-150{
+	margin-right: 150px;
 }
 
 .mr-175 {
@@ -859,6 +986,10 @@ tbody:nth-child(even) {
 
 .p-20 {
 	padding: 20px;
+}
+
+.p-10{
+	padding: 10px;
 }
 
 /* =========================================================
@@ -953,8 +1084,15 @@ tbody:nth-child(even) {
 	margin: 5px;
 }
 
+.m-10 {
+	margin: 10px;
+}
 .gap-5 {
 	gap: 5px;
+}
+
+.gap-10 {
+	gap: 10px;
 }
 
 .gap-25 {
@@ -1020,7 +1158,12 @@ tbody:nth-child(even) {
 }
 
 .red {
-	color: crimson;
+	color: #FD3F43;
+}
+
+.danger-red {
+	color: #f95738;
+	font-weight: 500;
 }
 
 .placeholder-color-blu::placeholder {
@@ -1038,6 +1181,8 @@ tbody:nth-child(even) {
 .white-bg {
 	background-color: white;
 }
+
+
 
 .bg-grey-light {
 	background-color: #f8f8f8;
@@ -1058,6 +1203,12 @@ tbody:nth-child(even) {
 .border {
 	border: 1px solid #d18744;
 	border-radius: 12px;
+}
+
+.delete-option {
+	display: flex;
+	align-items: center;
+	gap: 10px;
 }
 
 .mb-10 {
