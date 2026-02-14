@@ -54,6 +54,8 @@ function ViewBookcasesPage() {
 							state={{bookcaseLocation: bookcase?.location, bookcaseLabel: bookcase?.bookcaseLabel}}
 						>
 							<BookcaseCard
+								key={bookcase.bookcaseId}
+								bookcaseId={bookcase.bookcaseId}
 								location={bookcase?.location}
 								zone={bookcase?.bookcaseLabel.split(":")[0]}
 								identifier={bookcase?.bookcaseLabel.split(":")[1]}

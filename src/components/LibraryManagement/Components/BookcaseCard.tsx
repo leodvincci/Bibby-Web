@@ -1,9 +1,30 @@
+import { API_URL } from "../../../config/api";
 import { ProgressCard } from "./Progress";
 import { useState } from "react";
 
 function BookcaseCard(props: any) {
 
+	console.log("props: ", props);	
 	const [isEditMenu, setIsEditMenu] = useState(false);
+
+function handleDelete(){
+    fetch(`${API_URL}/api/v1/bookcase/delete/${props.bookcaseId}`, {
+        method: "DELETE",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((response) => {
+        if (response.ok) {
+            window.location.reload();
+        } else {
+            console.error("Delete failed:", response.status);
+        }
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
 	return (
 		<div className="border-gray-300 bookcase-card w-475px m-5 p-20 hover onclick cursor-pointer">
 			<p onClick={(e) => { e.preventDefault(); setIsEditMenu(!isEditMenu); }} className=" flex row just-end txt-10 blu w-8p ml-90p trans-50p hover-meatballs">● ● ●</p>
@@ -32,7 +53,7 @@ function BookcaseCard(props: any) {
 							<hr style={{ borderTop: "1px solid #4b8b9c1c" }} />
 						</div>
 
-						<section onClick={(e) => { e.preventDefault(); }} className="hover-bold delete-option h-12p m-10">
+						<section onClick={(e) => { e.preventDefault(); handleDelete(); }} className="hover-bold delete-option h-12p m-10">
 							<img src="/delete.png" className="w-8" alt="" />
 							<p className="red ">delete</p>
 						</section>
