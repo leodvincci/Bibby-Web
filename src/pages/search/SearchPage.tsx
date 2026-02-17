@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Nav } from "../Nav/Nav.tsx";
+import { Nav } from "../../components";
 import { SearchContainer } from "./SearchContainer.tsx";
 import { SearchResultContainer } from "./SearchResultContainer.tsx";
 import { API_URL } from "../../config/api";

@@ -1,7 +1,7 @@
 import { Button } from "@radix-ui/themes";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
-import { API_URL } from "../../config/api";
+import { useAuth } from "../context/AuthContext";
+import { API_URL } from "../config/api";
 
 function Nav() {
   const navigate = useNavigate();

@@ -1,9 +1,8 @@
 import { Button } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { Nav } from "../../Nav/Nav";
-import { BookcaseCard } from "../Components/BookcaseCard";
-import { API_URL } from "../../../config/api";
+import { Nav, BookcaseCard } from "../../components";
+import { API_URL } from "../../config/api";
 
 function ViewBookcasesPage() {
 	const [bookcases, setBookcases] = useState<any[]>([]);
@@ -51,7 +50,7 @@ function ViewBookcasesPage() {
 						<Link
 							to={`/bookshelves/view/${bookcase.bookcaseId}`}
 							key={bookcase.bookcaseId}
-							state={{bookcaseLocation: bookcase?.location, bookcaseLabel: bookcase?.bookcaseLabel}}
+							state={{ bookcaseLocation: bookcase?.location, bookcaseLabel: bookcase?.bookcaseLabel }}
 						>
 							<BookcaseCard
 								key={bookcase.bookcaseId}

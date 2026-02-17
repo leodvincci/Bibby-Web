@@ -1,6 +1,6 @@
 import { Button } from "@radix-ui/themes";
-import { Nav } from "../../Nav/Nav";
-import { API_URL } from "../../../config/api";
+import { Nav } from "../../components";
+import { API_URL } from "../../config/api";
 
 function AddBookcasePage() {
 	// const [location, setLocation] = useState("");
@@ -61,7 +61,7 @@ function AddBookcasePage() {
 							name="Location"
 							className=" w-800 h-40 br-60 bg-grey-light"
 							placeholder="e.g. Office, Basement, Bedroom"
-							// onChange={(e) => {setLocation(e.currentTarget.value)}}
+						// onChange={(e) => {setLocation(e.currentTarget.value)}}
 						/>
 					</div>
 
