@@ -2,17 +2,13 @@ import { createRoot } from "react-dom/client";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AddBookcasePage } from "./components/LibraryManagement/Bookcase/AddBookcasePage.tsx";
-import { AddBookPage } from "./components/LibraryManagement/Book/AddBookPage.tsx";
-import { BookPage } from "./components/LibraryManagement/Book/BookPage.tsx";
-import { ViewBookcasesPage } from "./components/LibraryManagement/Bookcase/ViewBookcasesPage.tsx";
-import { ViewBookshelvesPage } from "./components/LibraryManagement/Bookshelf/ViewBookshelvesPage.tsx";
-import { ViewShelfPage } from "./components/LibraryManagement/Bookshelf/ViewShelfPage.tsx";
-import { LoginPage } from "./components/Login/LoginPage.tsx";
-import { RegistrationPage } from "./components/Registration/RegistrationPage.tsx";
-import { SearchPage } from "./components/Search/SearchPage.tsx";
+import { AddBookcasePage, ViewBookcasesPage } from "./pages/bookcase";
+import { AddBookPage, BookPage } from "./pages/book";
+import { ViewBookshelvesPage, ViewShelfPage } from "./pages/bookshelf";
+import { LoginPage, RegistrationPage } from "./pages/auth";
+import { SearchPage } from "./pages/search";
 import { AuthProvider } from "./context/AuthContext";
-import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
+import { ProtectedRoute } from "./routing";
 
 const container = document.getElementById("app");
 if (!container) throw new Error("Root element with id `app` not found");
@@ -44,7 +40,7 @@ createRoot(container).render(
 					<Route path="/signup" element={<RegistrationPage />} />
 					<Route path="/login" element={<LoginPage />} />
 				</Routes>
-			</BrowserRouter> 
+			</BrowserRouter>
 		</AuthProvider>
 	</Theme>,
 );
