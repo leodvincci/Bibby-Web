@@ -17,7 +17,7 @@ function ViewBookcasesPage() {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
+				console.log("Fetched bookcases:", data);
 				setBookcases(data);
 			});
 	}
@@ -56,8 +56,8 @@ function ViewBookcasesPage() {
 								key={bookcase.bookcaseId}
 								bookcaseId={bookcase.bookcaseId}
 								location={bookcase?.location}
-								zone={bookcase?.bookcaseLabel.split(":")[0]}
-								identifier={bookcase?.bookcaseLabel.split(":")[1]}
+								zone={bookcase?.zone}
+								identifier={bookcase?.index}
 								capacity={bookcase?.bookCapacity}
 							></BookcaseCard>
 						</Link>
