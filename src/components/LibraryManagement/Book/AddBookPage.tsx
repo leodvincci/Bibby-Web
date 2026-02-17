@@ -8,6 +8,7 @@ function AddBookPage() {
 	const titleRef = useRef<HTMLInputElement>(null);
 	const authorsRef = useRef<HTMLInputElement>(null);
 	const locationRef = useRef<HTMLSelectElement>(null);
+	const publisherRef = useRef<HTMLInputElement>(null);
 	const [bookcases, setBookcases] = useState([]);
 	const [locations, setLocations] = useState([]);
 	const [bookshelves, setBookshelves] = useState([]);
@@ -106,6 +107,7 @@ function AddBookPage() {
 				// update the form fields with the fetched data
 				titleRef.current!.value = data.title || "";
 				authorsRef.current!.value = (data.authors || []).join(", ");
+				publisherRef.current!.value = data.publisher || "";
 			})
 			.catch((error) => {
 				console.error("Error fetching metadata:", error);
@@ -147,6 +149,7 @@ function AddBookPage() {
 		const isbn = formData.get("isbn");
 		const title = formData.get("title");
 		const authors = formData.get("authors");
+		const publisher = formData.get("publisher");
 		const shelfId = formData.get("bookshelves");
 		try {
 			const response = await fetch(
@@ -161,6 +164,7 @@ function AddBookPage() {
 						isbn,
 						shelfId,
 						title,
+						publisher,
 						authors:
 							typeof authors === "string"
 								? authors
@@ -249,6 +253,18 @@ function AddBookPage() {
 						name="authors"
 						type="text"
 						placeholder="e.g. Douglas Adams"
+					/>
+				</label>
+
+				<label htmlFor="publisher">
+					Publisher
+					<input
+						ref={publisherRef}
+						required
+						className="ml-10 mw-80 minw-20"
+						name="publisher"
+						type="text"
+						placeholder="e.g. Penrose Publishing"
 					/>
 				</label>
 
