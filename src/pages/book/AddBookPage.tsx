@@ -225,6 +225,7 @@ function AddBookPage() {
 						color="cyan"
 						variant="soft"
 					>
+						<img width="18px" height="18px" src="/magicwand.png" alt="Search" />
 						Auto-fill from ISBN
 					</Button>
 				</div>
