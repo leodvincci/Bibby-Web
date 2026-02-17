@@ -1,7 +1,7 @@
 import { Button } from "@radix-ui/themes";
 import { useEffect, useRef, useState } from "react";
-import { Nav } from "../../Nav/Nav";
-import { API_URL } from "../../../config/api";
+import { Nav } from "../../components";
+import { API_URL } from "../../config/api";
 import { useLocation } from "react-router";
 
 function AddBookPage() {
@@ -168,9 +168,9 @@ function AddBookPage() {
 						authors:
 							typeof authors === "string"
 								? authors
-										.split(",")
-										.map((a) => a.trim())
-										.filter(Boolean)
+									.split(",")
+									.map((a) => a.trim())
+									.filter(Boolean)
 								: [],
 					}),
 				},

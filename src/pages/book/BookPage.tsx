@@ -1,7 +1,7 @@
-import { Nav } from "../../Nav/Nav";
+import { Nav } from "../../components";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { API_URL } from "../../../config/api";
+import { API_URL } from "../../config/api";
 
 function BookPage() {
 
