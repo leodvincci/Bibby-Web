@@ -50,7 +50,7 @@ function ViewBookcasesPage() {
 						<Link
 							to={`/bookshelves/view/${bookcase.bookcaseId}`}
 							key={bookcase.bookcaseId}
-							state={{ bookcaseLocation: bookcase?.location, bookcaseLabel: bookcase?.bookcaseLabel }}
+							state={{ bookcaseLocation: bookcase?.location, index: bookcase?.index, bookcaseZone: bookcase?.zone, bookcaseIndex: bookcase?.index}}
 						>
 							<BookcaseCard
 								key={bookcase.bookcaseId}
