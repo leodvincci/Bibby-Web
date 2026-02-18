@@ -31,6 +31,12 @@ function AddBookcasePage() {
 				shelfCount: shelfCount,
 				shelfCapacity: shelfCapacity,
 			}),
+		}).then((response) => {
+			if (response.ok) {
+				console.log("Bookcase created successfully.");
+			} else {
+				console.log("Failed to create bookcase.");
+			}
 		});
 	}
 

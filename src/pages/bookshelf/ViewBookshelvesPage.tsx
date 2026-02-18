@@ -20,7 +20,7 @@ function ViewBookshelvesPage() {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log(data);
+				console.log("Fetched bookshelves data: ", data);
 				setBookshelves(data);
 			});
 	}
@@ -35,7 +35,7 @@ function ViewBookshelvesPage() {
 			<section className=" ml-175px mr-175">
 				<div className="flex align-itms-ctr  p-20 mb-50">
 					<div>
-						<h1 className="blu">{location.state?.bookcaseLocation} :: {location.state?.bookcaseLabel} :: Bookshelves</h1>
+						<h1 className="blu">{location.state?.bookcaseLocation} :: {location.state?.bookcaseZone }  {location.state?.bookcaseIndex} :: Bookshelves</h1>
 						<p>Pick a bookshelf to see what's on each shelf.</p>
 					</div>
 				</div>
@@ -45,14 +45,14 @@ function ViewBookshelvesPage() {
 						<Link
 							to={`/bookshelves/view/shelf/${bookshelf.shelfId}`}
 							key={bookshelf.shelfId}
-							state={{ bookshelfLocation: location.state.bookcaseLocation, shelfLabel: bookshelf.shelfLabel, bookcaseLabel: bookshelf.bookcaseLabel }}
+							state={{ bookshelfLocation: location.state.bookcaseLocation, shelfLabel: bookshelf.shelfLabel, bookcaseZone: location.state.bookcaseZone, bookcaseIndex: location.state.bookcaseIndex }}
 						>
 							<BookcaseCard
 								key={bookshelf.shelfId}
 								location={bookshelf?.shelfLabel}
 								capacity={bookshelf?.bookCapacity}
-								zone={bookshelf?.bookcaseLabel.split(":")[0]}
-								identifier={bookshelf?.bookcaseLabel.split(":")[1]}
+								zone={location.state?.bookcaseZone}
+								identifier={location.state?.bookcaseIndex}
 								placed={bookshelf?.bookCount}
 							></BookcaseCard>
 						</Link>

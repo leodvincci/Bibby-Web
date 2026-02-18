@@ -36,7 +36,7 @@ function ViewShelfPage() {
 			<section className=" ml-175px mr-175">
 				<div className="flex align-itms-ctr  p-20 mb-50">
 					<div>
-						<h1 className="blu"> {location.state?.bookshelfLocation} :: {location.state?.bookcaseLabel} :: Shelf {shelfId}</h1>
+						<h1 className="blu"> {location.state?.bookshelfLocation} :: {location.state?.bookcaseZone} {location.state?.bookcaseIndex} :: Shelf {shelfId}</h1>
 						<p>Pick a book from the shelf.</p>
 					</div>
 
